@@ -6,13 +6,31 @@
     "test": "npx playwright test",
     "test:headed": "npx playwright test --headed",
     "test:debug": "npx playwright test --debug",
+    "test:api": "npx playwright test --grep 'API'",
+    "test:smoke": "npx playwright test --grep '@smoke'",
+    "test:chrome": "npx playwright test --project=chromium",
+    "test:firefox": "npx playwright test --project=firefox",
+    "test:webkit": "npx playwright test --project=webkit",
     "report": "npx playwright show-report",
-    "clean": "rm -rf test-results/ playwright-report/"
+    "report:open": "npx playwright show-report reports/playwright-report",
+    "codegen": "npx playwright codegen https://ndosiautomation.co.za",
+    "clean": "rm -rf reports/ test-results/ playwright-report/ dist/",
+    "clean:all": "rm -rf node_modules/ reports/ test-results/ playwright-report/ dist/ package-lock.json",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "type-check": "tsc --noEmit",
+    "setup": "node scripts/setup.js",
+    "create:image": "node scripts/create-test-image.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.40.0",
     "@types/node": "^20.10.0",
+    "canvas": "^2.11.2",
     "dotenv": "^16.3.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
