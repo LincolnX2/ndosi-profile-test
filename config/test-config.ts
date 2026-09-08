@@ -26,8 +26,8 @@ export const TestConfig = {
   // Selectors - Update these based on actual website
   selectors: {
     login: {
-      email: 'input[type="email"], input[name="email"], input[placeholder*="Email"]',
-      password: 'input[type="password"], input[name="password"], input[placeholder*="Password"]',
+      email: 'input[type="text"], input[name="loginEmail"], input[placeholder="Email"]',
+      password: 'input[type="password"], input[name="loginPassword"], input[placeholder*="Password"]',
       submit: 'button[type="submit"], button:has-text("Login"), button:has-text("Sign In")',
       errorMessage: '.error, .alert-danger, [role="alert"]',
       successMessage: '.success, .alert-success',
