@@ -10,14 +10,14 @@ export const TestConfig = {
   
   // Test data
   testData: {
-    email: process.env.TEST_EMAIL || 'sabur.yinus@gmail.com',
-    password: process.env.TEST_PASSWORD || 'olamilekan@11',
+    email: process.env.TEST_EMAIL || 'admin@gmail.com',
+    password: process.env.TEST_PASSWORD || '@12345678',
     testImagePath: 'src/fixtures/test-profile-image.png',
   },
   
   // URLs
   urls: {
-    base: process.env.BASE_URL || 'https://ndosiautomation.co.za',
+    base: process.env.BASE_URL || 'https://ndosisimplifiedautomation.vercel.app/#practice',
     practice: '/#practice',
     login: '/#practice/login',
     profile: '/#practice/profile',
