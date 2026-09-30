@@ -1,11 +1,6 @@
 {
   "config": {
-    "argv": [
-      "C:\\Program Files\\nodejs\\node.exe",
-      "C:\\Users\\USER\\Documents\\ndosi-profile-test\\node_modules\\@playwright\\test\\cli.js",
-      "test",
-      "/tests/profile-picture.spec.ts"
-    ],
+    "argv": [],
     "configFile": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\playwright.config.ts",
     "rootDir": "C:/Users/USER/Documents/ndosi-profile-test/tests",
     "failOnFlakyTests": false,
@@ -66,7 +61,7 @@
     "shard": null,
     "tags": [],
     "updateSnapshots": "missing",
-    "updateSourceMethod": "patch",
+    "updateSourceMethod": "3way",
     "version": "1.62.1",
     "workers": 2,
     "webServer": null
@@ -87,7 +82,7 @@
           "specs": [
             {
               "title": "should upload profile picture and validate APIs",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -100,23 +95,210 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3397,
-                      "errors": [],
-                      "stdout": [],
+                      "status": "failed",
+                      "duration": 15105,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\profile-picture.spec.ts:80:24",
+                        "location": {
+                          "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\profile-picture.spec.ts",
+                          "column": 24,
+                          "line": 80
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 78 |\u001b[39m\n \u001b[90m 79 |\u001b[39m     \u001b[36mconst\u001b[39m isLoggedIn \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39misLoggedIn()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 80 |\u001b[39m     expect(isLoggedIn)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 81 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'✅ Login successful'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 82 |\u001b[39m\n \u001b[90m 83 |\u001b[39m     testSteps\u001b[33m.\u001b[39mpush({\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\profile-picture.spec.ts",
+                            "column": 24,
+                            "line": 80
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 78 |\u001b[39m\n \u001b[90m 79 |\u001b[39m     \u001b[36mconst\u001b[39m isLoggedIn \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39misLoggedIn()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 80 |\u001b[39m     expect(isLoggedIn)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 81 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'✅ Login successful'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 82 |\u001b[39m\n \u001b[90m 83 |\u001b[39m     testSteps\u001b[33m.\u001b[39mpush({\u001b[0m\n\u001b[2m    at C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\profile-picture.spec.ts:80:24\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "\n🔐 Step 1: Navigating to Ndosi site...\n"
+                        },
+                        {
+                          "text": "📡 API: GET https://ndosiautomation.co.za/static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - Status: 200\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Request: GET /groups No token\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response: 200 \n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response data: {success: true, message: Active groups retrieved successfully, data: Array(12)}\n"
+                        },
+                        {
+                          "text": "🔑 Step 2: Logging in as sabur.yinus@gmail.com...\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: Login attempt with: {username: sabur.yinus@gmail.com, password: olamilekan@11}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Request: POST /login No token\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response: 200 \n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response data: {success: true, message: Login successful, data: Object}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: Full login response: {\n  \"success\": true,\n  \"message\": \"Login successful\",\n  \"data\": {\n    \"user\": {\n      \"id\": \"68e30288-18b8-4b84-9040-03b5fc21fc3a\",\n      \"firstName\": \"Sabur\",\n      \"lastName\": \"Yinus\",\n      \"email\": \"sabur.yinus@gmail.com\",\n      \"role\": \"user\",\n      \"groupId\": \"fb1b509e-78db-477c-a64e-f7265d593904\",\n      \"groupName\": \"6th Group 2026\",\n      \"approvalStatus\": \"approved\",\n      \"createdAt\": \"2026-02-01 18:22:58\",\n      \"updatedAt\": \"2026-09-22 19:26:07\"\n    },\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI2OGUzMDI4OC0xOGI4LTRiODQtOTA0MC0wM2I1ZmMyMWZjM2EiLCJlbWFpbCI6InNhYnVyLnlpbnVzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwic2Vzc2lvbklkIjoiMjg3ODVlZjEtN2E4Yi00NmY4LWI5NGQtZDM3YzUwMmZhMmU3IiwiaWF0IjoxNzkwNzk2MDI4LCJleHAiOjE3OTA4ODI0Mjh9.QFB8l5xKuHuHc34yweZSDxo1x3hZ0XjtycP9KYh7YqM\",\n    \"sessionId\": \"28785ef1-7a8b-46f8-b94d-d37c502fa2e7\"\n  }\n}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: Extracted token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI2OGUzMDI4OC0xOGI4LTRiODQtOTA0MC0wM2I1ZmMyMWZjM2EiLCJlbWFpbCI6InNhYnVyLnlpbnVzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwic2Vzc2lvbklkIjoiMjg3ODVlZjEtN2E4Yi00NmY4LWI5NGQtZDM3YzUwMmZhMmU3IiwiaWF0IjoxNzkwNzk2MDI4LCJleHAiOjE3OTA4ODI0Mjh9.QFB8l5xKuHuHc34yweZSDxo1x3hZ0XjtycP9KYh7YqM\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: Token saved successfully\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: Extracted user: {id: 68e30288-18b8-4b84-9040-03b5fc21fc3a, firstName: Sabur, lastName: Yinus, email: sabur.yinus@gmail.com, role: user}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: Admin status: false\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: Instructor status: false\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: Auth state changed: {loggedIn: true}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: Login response: {success: true, message: Login successful, data: Object}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: Login successful: {success: true, message: Login successful, data: Object}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: User data extracted: {id: 68e30288-18b8-4b84-9040-03b5fc21fc3a, firstName: Sabur, lastName: Yinus, email: sabur.yinus@gmail.com, role: user}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: Final user info: {firstName: Sabur, lastName: Yinus, email: sabur.yinus@gmail.com}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: Auth state changed: {loggedIn: true}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Request: GET /profile With token\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Request: GET /my-enrollments With token\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Request: GET /my-instructor-tasks With token\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Request: GET /student/today With token\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Request: GET /my-instructors/today With token\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Request: GET /profile With token\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: Setting isLoggedIn to: true\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Request: GET /profile With token\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: Setting isLoggedIn to: true\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response: 200 \n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response data: {success: true, message: Profile retrieved successfully, data: Object}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response: 200 \n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response data: {success: true, message: Enrollments retrieved successfully, data: Object}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: Failed to load resource: the server responded with a status of 404 ()\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response: 404 \n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response: 200 \n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response data: {success: false, message: Endpoint not found, error_code: ENDPOINT_NOT_FOUND, requested_path: /student/today, requested_method: GET}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response data: {success: true, message: Today's instructors retrieved successfully, data: Object}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response: 200 \n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response data: {success: true, message: Tasks retrieved successfully, data: Object}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response: 200 \n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response data: {success: true, message: Profile retrieved successfully, data: Object}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response: 200 \n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response data: {success: true, message: Profile retrieved successfully, data: Object}\n"
+                        },
+                        {
+                          "text": "📸 Failure screenshot saved: test-results/failure-1790796034640.png\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-29T21:08:34.128Z",
+                      "startTime": "2026-09-30T19:20:17.144Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\profile-picture-Ndosi-Prof-767ac-e-picture-and-validate-APIs-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\profile-picture-Ndosi-Prof-767ac-e-picture-and-validate-APIs-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\profile-picture-Ndosi-Prof-767ac-e-picture-and-validate-APIs-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\profile-picture-Ndosi-Prof-767ac-e-picture-and-validate-APIs-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\profile-picture.spec.ts",
+                        "column": 24,
+                        "line": 80
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "70a85c6b6c9ad3c66082-3398cea12bea261e851b",
               "file": "profile-picture.spec.ts",
-              "line": 30,
+              "line": 57,
               "column": 7
             }
           ]
@@ -126,11 +308,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-09-29T21:08:23.006Z",
-    "duration": 24406.490999999998,
-    "expected": 1,
+    "startTime": "2026-09-30T19:20:14.705Z",
+    "duration": 21285.812000000005,
+    "expected": 0,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }
