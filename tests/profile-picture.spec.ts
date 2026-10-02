@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../src/pages/LoginPage';
+import { HomePage } from '../src/pages/HomePage';
 import { ProfilePage } from '../src/pages/ProfilePage';
 import { ApiValidator } from '../src/utils/api-validator';
 import { ReportGenerator, TestStep } from '../src/utils/report-generator';
@@ -12,6 +13,7 @@ const TEST_PASSWORD = environment.testPassword;
 
 test.describe('Ndosi Profile Picture Update Flow', () => {
   let loginPage: LoginPage;
+  let homePage: HomePage;
   let profilePage: ProfilePage;
   let apiValidator: ApiValidator;
   let reportGenerator: ReportGenerator;
@@ -20,6 +22,7 @@ test.describe('Ndosi Profile Picture Update Flow', () => {
 
   test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page);
+    homePage = new HomePage(page);
     profilePage = new ProfilePage(page);
     apiValidator = new ApiValidator();
     reportGenerator = new ReportGenerator();
@@ -48,7 +51,6 @@ test.describe('Ndosi Profile Picture Update Flow', () => {
       }
     });
 
-    // Log browser console messages for debugging
     page.on('console', (msg) => {
       console.log(`🌐 Browser Console: ${msg.text()}`);
     });
@@ -70,13 +72,14 @@ test.describe('Ndosi Profile Picture Update Flow', () => {
     });
 
     // ═══════════════════════════════════════════════════════════
-    // Step 2: Login with credentials
+    // Step 2: Login
     // ═══════════════════════════════════════════════════════════
     console.log(`🔑 Step 2: Logging in as ${TEST_EMAIL}...`);
     await loginPage.login(TEST_EMAIL, TEST_PASSWORD);
     await page.screenshot({ path: 'test-results/02-after-login.png' });
 
-    const isLoggedIn = await loginPage.isLoggedIn();
+    // Verify login via HomePage
+    const isLoggedIn = await homePage.isLoggedIn();
     expect(isLoggedIn).toBeTruthy();
     console.log('✅ Login successful');
 
@@ -89,10 +92,10 @@ test.describe('Ndosi Profile Picture Update Flow', () => {
     });
 
     // ═══════════════════════════════════════════════════════════
-    // Step 3: Click the menu button
+    // Step 3: Open menu (HomePage)
     // ═══════════════════════════════════════════════════════════
     console.log('📋 Step 3: Opening menu...');
-    await profilePage.clickMenu();
+    await homePage.clickMenu();
     await page.screenshot({ path: 'test-results/03-menu-open.png' });
     testSteps.push({
       name: 'Open menu',
@@ -103,10 +106,10 @@ test.describe('Ndosi Profile Picture Update Flow', () => {
     });
 
     // ═══════════════════════════════════════════════════════════
-    // Step 4: Navigate to My Profile
+    // Step 4: Navigate to My Profile (HomePage)
     // ═══════════════════════════════════════════════════════════
     console.log('👤 Step 4: Navigating to My Profile...');
-    await profilePage.clickMyProfile();
+    await homePage.clickMyProfile();
     await page.screenshot({ path: 'test-results/04-profile-page.png' });
     testSteps.push({
       name: 'Navigate to My Profile',
@@ -117,7 +120,7 @@ test.describe('Ndosi Profile Picture Update Flow', () => {
     });
 
     // ═══════════════════════════════════════════════════════════
-    // Step 5: Click Edit Profile
+    // Step 5: Edit Profile (ProfilePage)
     // ═══════════════════════════════════════════════════════════
     console.log('✏️ Step 5: Opening Edit Profile...');
     await profilePage.clickEditProfile();
@@ -131,23 +134,17 @@ test.describe('Ndosi Profile Picture Update Flow', () => {
     });
 
     // ═══════════════════════════════════════════════════════════
-    // Step 6: Upload a new profile picture
+    // Step 6: Upload profile picture (ProfilePage)
     // ═══════════════════════════════════════════════════════════
     console.log('📤 Step 6: Uploading profile picture...');
-
-    // Get the initial profile picture source
     const initialSrc = await profilePage.getProfilePictureSrc();
     console.log(`📸 Initial profile picture: ${initialSrc}`);
 
-    // Path to the test image
     const imagePath = path.join(__dirname, '../fixtures/test-image.png');
-
-    // Verify image exists
     if (!fs.existsSync(imagePath)) {
       throw new Error(`Test image not found at: ${imagePath}`);
     }
 
-    // Upload the picture
     await profilePage.uploadProfilePicture(imagePath);
     await page.screenshot({ path: 'test-results/06-after-upload.png' });
     testSteps.push({
@@ -159,15 +156,13 @@ test.describe('Ndosi Profile Picture Update Flow', () => {
     });
 
     // ═══════════════════════════════════════════════════════════
-    // Step 7: Verify profile picture was updated
+    // Step 7: Verify update (ProfilePage)
     // ═══════════════════════════════════════════════════════════
     console.log('⏳ Step 7: Verifying profile update...');
     await profilePage.waitForProfileUpdate();
 
     const updatedSrc = await profilePage.getProfilePictureSrc();
     console.log(`📸 Updated profile picture: ${updatedSrc}`);
-
-    // Verify the image source changed
     expect(updatedSrc).not.toBe(initialSrc);
     console.log('✅ Profile picture updated successfully');
 
@@ -181,51 +176,34 @@ test.describe('Ndosi Profile Picture Update Flow', () => {
     });
 
     // ═══════════════════════════════════════════════════════════
-    // Step 8: Validate all API responses
+    // Step 8: Validate API responses
     // ═══════════════════════════════════════════════════════════
     console.log('\n📊 ═══════ API VALIDATION RESULTS ═══════');
-
     const allApiCalls = apiValidator.getAllApiCalls();
     const uniqueEndpoints = apiValidator.getUniqueEndpoints();
 
     console.log(`📡 Total API calls captured: ${allApiCalls.length}`);
     console.log(`📋 Unique endpoints: ${uniqueEndpoints.length}\n`);
 
-    // Log each API call
-    console.log('📝 All API Calls:');
     allApiCalls.forEach((call, index) => {
       const statusIcon = call.status >= 200 && call.status < 300 ? '✅' : '❌';
       console.log(`  ${index + 1}. ${statusIcon} ${call.method} ${call.url} - Status: ${call.status}`);
     });
 
-    // Log unique endpoints
     console.log('\n📋 Unique Endpoints:');
     uniqueEndpoints.forEach((endpoint, index) => {
       const calls = allApiCalls.filter((call) => call.url.includes(endpoint));
       const statuses = [...new Set(calls.map((c) => c.status))];
-      console.log(`  ${index + 1}. ${endpoint} - Statuses: ${statuses.join(', ')} (${calls.length} calls)`);
+      console.log(`  ${index + 1}. ${endpoint} - Statuses: ${statuses.join(', ')}`);
     });
 
-    // Validate all API calls were successful
     const validation = apiValidator.validateAllSuccess();
-
-    if (validation.failed.length > 0) {
-      console.log('\n⚠️ Failed API Calls:');
-      validation.failed.forEach((call) => {
-        console.log(`  ❌ ${call.method} ${call.url} - Status: ${call.status}`);
-      });
-    }
-
-    // Assert that all API calls succeeded (2xx status codes)
     expect(validation.passed, `Found ${validation.failed.length} failed API calls`).toBeTruthy();
-
-    // At least one API call should have been made
     expect(allApiCalls.length, 'No API calls were captured').toBeGreaterThan(0);
-
     console.log('\n✅ All API calls validated successfully!');
 
     // ═══════════════════════════════════════════════════════════
-    // Step 9: Generate test report
+    // Step 9: Generate report
     // ═══════════════════════════════════════════════════════════
     const testReport = {
       timestamp: new Date().toISOString(),
@@ -241,21 +219,16 @@ test.describe('Ndosi Profile Picture Update Flow', () => {
     const reportPath = reportGenerator.generateTestReport(testReport);
     console.log(`\n📄 Test report saved to: ${reportPath}`);
 
-    // ═══════════════════════════════════════════════════════════
-    // Final Summary
-    // ═══════════════════════════════════════════════════════════
     console.log('\n📈 ═══════ TEST SUMMARY ═══════');
     console.log('  ✅ Login: Successful');
     console.log('  ✅ Navigation: Successful');
     console.log('  ✅ Profile Update: Successful');
     console.log(`  📡 Total API Calls: ${allApiCalls.length}`);
-    console.log(`  📡 Unique Endpoints: ${uniqueEndpoints.length}`);
     console.log(`  ⏱️ Total Duration: ${Date.now() - startTime}ms`);
     console.log('═══════════════════════════════════════\n');
   });
 
   test.afterEach(async ({ page }, testInfo) => {
-    // Take a screenshot on failure
     if (testInfo.status !== 'passed') {
       const screenshotPath = `test-results/failure-${Date.now()}.png`;
       await page.screenshot({ path: screenshotPath, fullPage: true });
