@@ -1,17 +1,22 @@
 {
   "name": "ndosi-profile-test",
   "version": "1.0.0",
+  "description": "End-to-end test automation for Ndosi profile picture update",
   "scripts": {
-    "test": "npx playwright test",
-    "test:headed": "npx playwright test --headed",
-    "test:debug": "npx playwright test --debug",
-    "report": "npx playwright show-report",
-    "clean": "rm -rf test-results/ playwright-report/"
+    "test": "playwright test --workers=1",
+    "test:headed": "playwright test --workers=1 --headed",
+    "test:debug": "playwright test --debug",
+    "test:smoke": "playwright test --grep @smoke --workers=1",
+    "test:regression": "playwright test --grep @regression --workers=1",
+    "report": "playwright show-report",
+    "clean": "rimraf test-results playwright-report",
+    "setup": "npm install && npx playwright install chromium"
   },
   "devDependencies": {
     "@playwright/test": "^1.40.0",
     "@types/node": "^20.10.0",
     "dotenv": "^16.3.1",
+    "rimraf": "^5.0.5",
     "typescript": "^5.3.0"
   }
 }

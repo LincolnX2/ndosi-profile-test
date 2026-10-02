@@ -1,0 +1,324 @@
+<testsuites id="" name="" tests="13" failures="0" skipped="0" errors="0" time="224.064884">
+<testsuite name="01-login.spec.ts" timestamp="2026-10-02T23:33:35.973Z" hostname="chromium" tests="4" failures="0" skipped="0" time="58.239" errors="0">
+<testcase name="Login Functionality › should navigate to the Ndosi practice page" classname="01-login.spec.ts" time="5.844">
+<system-out>
+<![CDATA[Test: Navigate to login page
+Page loaded: https://ndosiautomation.co.za/#practice
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Functionality › should display email and password input fields" classname="01-login.spec.ts" time="3.025">
+<system-out>
+<![CDATA[Test: Display login form fields
+All login form fields are visible
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Functionality › should successfully login with valid credentials" classname="01-login.spec.ts" time="11.06">
+<system-out>
+<![CDATA[Test: Login with sabur.yinus@gmail.com
+
+🔑 ========== LOGIN START ==========
+📧 Email filled: "sabur.yinus@gmail.com"
+🔑 Password filled: "olamilekan@11" (length: 13)
+👁️  Clicked "Show password"
+🖱️  Clicking Login button...
+⏳ Waiting for navigation to dashboard...
+✅ Navigation detected! URL changed to dashboard
+📍 Final URL: https://ndosiautomation.co.za/#dashboard
+🔑 ========== LOGIN END ==========
+
+🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#dashboard
+✅ [isLoggedIn] Confirmed via dashboard URL
+Login successful
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Functionality › should fail login with invalid credentials" classname="01-login.spec.ts" time="38.31">
+<system-out>
+<![CDATA[Test: Login with invalid credentials
+
+🔑 ========== LOGIN START ==========
+📧 Email filled: "invalid@example.com"
+🔑 Password filled: "wrongpassword" (length: 13)
+👁️  Clicked "Show password"
+🖱️  Clicking Login button...
+⏳ Waiting for navigation to dashboard...
+[Dialog] "Invalid credentials. Please try again."
+⚠️  URL did not change. Current URL: https://ndosiautomation.co.za/#practice
+📍 Final URL: https://ndosiautomation.co.za/#practice
+🔑 ========== LOGIN END ==========
+
+🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#practice
+❌ [isLoggedIn] Login not confirmed
+Error message: none found
+Invalid login correctly rejected
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="02-navigation.spec.ts" timestamp="2026-10-02T23:33:35.973Z" hostname="chromium" tests="4" failures="0" skipped="0" time="62.697" errors="0">
+<testcase name="Navigation &amp; Menu › should verify user is logged in and on home page" classname="02-navigation.spec.ts" time="12.862">
+<system-out>
+<![CDATA[
+🔑 ========== LOGIN START ==========
+📧 Email filled: "sabur.yinus@gmail.com"
+🔑 Password filled: "olamilekan@11" (length: 13)
+👁️  Clicked "Show password"
+🖱️  Clicking Login button...
+⏳ Waiting for navigation to dashboard...
+✅ Navigation detected! URL changed to dashboard
+📍 Final URL: https://ndosiautomation.co.za/#dashboard
+🔑 ========== LOGIN END ==========
+
+🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#dashboard
+✅ [isLoggedIn] Confirmed via dashboard URL
+Test: Verify authenticated state
+🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#dashboard
+✅ [isLoggedIn] Confirmed via dashboard URL
+Logged in. URL: https://ndosiautomation.co.za/#dashboard
+]]>
+</system-out>
+</testcase>
+<testcase name="Navigation &amp; Menu › should open the menu when clicking the menu button" classname="02-navigation.spec.ts" time="13.429">
+<system-out>
+<![CDATA[
+🔑 ========== LOGIN START ==========
+📧 Email filled: "sabur.yinus@gmail.com"
+🔑 Password filled: "olamilekan@11" (length: 13)
+👁️  Clicked "Show password"
+🖱️  Clicking Login button...
+⏳ Waiting for navigation to dashboard...
+✅ Navigation detected! URL changed to dashboard
+📍 Final URL: https://ndosiautomation.co.za/#dashboard
+🔑 ========== LOGIN END ==========
+
+🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#dashboard
+✅ [isLoggedIn] Confirmed via dashboard URL
+Test: Open menu
+🖱️  Clicking Menu button...
+Menu opened successfully
+]]>
+</system-out>
+</testcase>
+<testcase name="Navigation &amp; Menu › should navigate to My Profile from the menu" classname="02-navigation.spec.ts" time="16.681">
+<system-out>
+<![CDATA[
+🔑 ========== LOGIN START ==========
+📧 Email filled: "sabur.yinus@gmail.com"
+🔑 Password filled: "olamilekan@11" (length: 13)
+👁️  Clicked "Show password"
+🖱️  Clicking Login button...
+⏳ Waiting for navigation to dashboard...
+✅ Navigation detected! URL changed to dashboard
+📍 Final URL: https://ndosiautomation.co.za/#dashboard
+🔑 ========== LOGIN END ==========
+
+🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#dashboard
+✅ [isLoggedIn] Confirmed via dashboard URL
+Test: Navigate to My Profile
+🖱️  Clicking Menu button...
+🖱️  Clicking My Profile...
+Navigated to: https://ndosiautomation.co.za/#profile
+]]>
+</system-out>
+</testcase>
+<testcase name="Navigation &amp; Menu › should display profile information on profile page" classname="02-navigation.spec.ts" time="19.725">
+<system-out>
+<![CDATA[
+🔑 ========== LOGIN START ==========
+📧 Email filled: "sabur.yinus@gmail.com"
+🔑 Password filled: "olamilekan@11" (length: 13)
+👁️  Clicked "Show password"
+🖱️  Clicking Login button...
+⏳ Waiting for navigation to dashboard...
+✅ Navigation detected! URL changed to dashboard
+📍 Final URL: https://ndosiautomation.co.za/#dashboard
+🔑 ========== LOGIN END ==========
+
+🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#dashboard
+✅ [isLoggedIn] Confirmed via dashboard URL
+Test: Verify profile page content
+🖱️  Clicking Menu button...
+🖱️  Clicking My Profile...
+URL: https://ndosiautomation.co.za/#profile
+🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#profile
+✅ [isLoggedIn] Confirmed via dashboard URL
+Profile page verified
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="03-profile-picture-upload.spec.ts" timestamp="2026-10-02T23:33:35.973Z" hostname="chromium" tests="1" failures="0" skipped="0" time="33.68" errors="0">
+<testcase name="Profile Picture Upload › should upload and verify profile picture update" classname="03-profile-picture-upload.spec.ts" time="33.68">
+<system-out>
+<![CDATA[
+🔑 ========== LOGIN START ==========
+📧 Email filled: "sabur.yinus@gmail.com"
+🔑 Password filled: "olamilekan@11" (length: 13)
+👁️  Clicked "Show password"
+🖱️  Clicking Login button...
+⏳ Waiting for navigation to dashboard...
+✅ Navigation detected! URL changed to dashboard
+📍 Final URL: https://ndosiautomation.co.za/#dashboard
+🔑 ========== LOGIN END ==========
+
+🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#dashboard
+✅ [isLoggedIn] Confirmed via dashboard URL
+
+========================================
+PROFILE UPLOAD TEST
+========================================
+
+Step 1: Navigate to My Profile
+🖱️  Clicking Menu button...
+🖱️  Clicking My Profile...
+Initial: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790982973_2c6f6f4e.png
+Step 2: Opening Edit Profile
+Step 3: Uploading picture
+Step 4: Saving changes
+[Dialog] "Profile updated successfully!"
+Step 5: Reloading page to exit edit mode
+Step 6: Navigating back to My Profile
+🖱️  Clicking Menu button...
+🖱️  Clicking My Profile...
+Step 7: Verifying picture changed
+Updated: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png
+
+Dialogs: ["Profile updated successfully!"]
+Initial URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790982973_2c6f6f4e.png
+Updated URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png
+Profile picture URL changed!
+
+TEST COMPLETE
+
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="04-api-validation.spec.ts" timestamp="2026-10-02T23:33:35.973Z" hostname="chromium" tests="3" failures="0" skipped="0" time="31.658" errors="0">
+<testcase name="API Validation › should capture all API calls during login" classname="04-api-validation.spec.ts" time="9.239">
+<system-out>
+<![CDATA[Test: Capture login API calls
+[API] GET https://ndosiautomation.co.za/static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - Status: 200 (0ms)
+
+🔑 ========== LOGIN START ==========
+📧 Email filled: "sabur.yinus@gmail.com"
+🔑 Password filled: "olamilekan@11" (length: 13)
+👁️  Clicked "Show password"
+🖱️  Clicking Login button...
+⏳ Waiting for navigation to dashboard...
+✅ Navigation detected! URL changed to dashboard
+[API] GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png - Status: 200 (0ms)
+📍 Final URL: https://ndosiautomation.co.za/#dashboard
+🔑 ========== LOGIN END ==========
+
+Total calls: 2
+Unique endpoints: 2
+  1. [PASS] GET https://ndosiautomation.co.za/static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - 200
+  2. [PASS] GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png - 200
+]]>
+</system-out>
+</testcase>
+<testcase name="API Validation › should validate all API responses are successful (2xx)" classname="04-api-validation.spec.ts" time="11.347">
+<system-out>
+<![CDATA[Test: Validate all API responses
+[API] GET https://ndosiautomation.co.za/static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - Status: 200 (0ms)
+
+🔑 ========== LOGIN START ==========
+📧 Email filled: "sabur.yinus@gmail.com"
+🔑 Password filled: "olamilekan@11" (length: 13)
+👁️  Clicked "Show password"
+🖱️  Clicking Login button...
+⏳ Waiting for navigation to dashboard...
+✅ Navigation detected! URL changed to dashboard
+[API] GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png - Status: 200 (0ms)
+📍 Final URL: https://ndosiautomation.co.za/#dashboard
+🔑 ========== LOGIN END ==========
+
+🖱️  Clicking Menu button...
+🖱️  Clicking My Profile...
+
+API Validation Summary:
+  Total calls: 2
+  Failed calls: 0
+  Success rate: 100.00%
+]]>
+</system-out>
+</testcase>
+<testcase name="API Validation › should generate API report with unique endpoints" classname="04-api-validation.spec.ts" time="11.072">
+<system-out>
+<![CDATA[Test: Generate API report
+[API] GET https://ndosiautomation.co.za/static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - Status: 200 (0ms)
+
+🔑 ========== LOGIN START ==========
+📧 Email filled: "sabur.yinus@gmail.com"
+🔑 Password filled: "olamilekan@11" (length: 13)
+👁️  Clicked "Show password"
+🖱️  Clicking Login button...
+⏳ Waiting for navigation to dashboard...
+✅ Navigation detected! URL changed to dashboard
+[API] GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png - Status: 200 (0ms)
+📍 Final URL: https://ndosiautomation.co.za/#dashboard
+🔑 ========== LOGIN END ==========
+
+🖱️  Clicking Menu button...
+🖱️  Clicking My Profile...
+
+Unique endpoints captured:
+  1. /static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - Statuses: 200
+  2. /API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png - Statuses: 200
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="05-end-to-end.spec.ts" timestamp="2026-10-02T23:33:35.973Z" hostname="chromium" tests="1" failures="0" skipped="0" time="35.865" errors="0">
+<testcase name="End-to-End: Complete Profile Picture Update › should complete the entire flow: login -&gt; navigate -&gt; upload -&gt; verify" classname="05-end-to-end.spec.ts" time="35.865">
+<system-out>
+<![CDATA[
+🔑 ========== LOGIN START ==========
+📧 Email filled: "sabur.yinus@gmail.com"
+🔑 Password filled: "olamilekan@11" (length: 13)
+👁️  Clicked "Show password"
+🖱️  Clicking Login button...
+⏳ Waiting for navigation to dashboard...
+✅ Navigation detected! URL changed to dashboard
+📍 Final URL: https://ndosiautomation.co.za/#dashboard
+🔑 ========== LOGIN END ==========
+
+🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#dashboard
+✅ [isLoggedIn] Confirmed via dashboard URL
+
+========================================
+END-TO-END TEST
+========================================
+
+Step 1: Logged in via fixture
+Step 2: Navigate to Profile
+🖱️  Clicking Menu button...
+🖱️  Clicking My Profile...
+Step 3: Capture initial picture
+Initial: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png
+Step 4: Edit Profile
+Step 5: Upload new picture
+Step 6: Save changes
+[Dialog] "Profile updated successfully!"
+Step 7: Reload page
+Step 8: Navigate back to profile
+🖱️  Clicking Menu button...
+🖱️  Clicking My Profile...
+Step 9: Verify update
+Updated: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984223_40fbf961.png
+
+Dialogs: ["Profile updated successfully!"]
+Initial URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png
+Updated URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984223_40fbf961.png
+Profile picture URL changed!
+
+E2E TEST COMPLETE - Duration: 25355ms
+
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

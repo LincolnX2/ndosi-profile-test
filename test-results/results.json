@@ -1,0 +1,1270 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\USER\\Documents\\ndosi-profile-test\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--workers=1"
+    ],
+    "configFile": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\playwright.config.ts",
+    "rootDir": "C:/Users/USER/Documents/ndosi-profile-test/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/USER/Documents/ndosi-profile-test/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/USER/Documents/ndosi-profile-test/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results/junit.xml"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "01-login.spec.ts",
+      "file": "01-login.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Login Functionality",
+          "file": "01-login.spec.ts",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should navigate to the Ndosi practice page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5844,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Test: Navigate to login page\n"
+                        },
+                        {
+                          "text": "Page loaded: https://ndosiautomation.co.za/#practice\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-02T23:33:36.935Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "29ac412fd126331721f5-67249eebf07063a60bcd",
+              "file": "01-login.spec.ts",
+              "line": 8,
+              "column": 7
+            },
+            {
+              "title": "should display email and password input fields",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3025,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Test: Display login form fields\n"
+                        },
+                        {
+                          "text": "All login form fields are visible\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-02T23:33:43.084Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "29ac412fd126331721f5-58a2b44ca57c1589214a",
+              "file": "01-login.spec.ts",
+              "line": 20,
+              "column": 7
+            },
+            {
+              "title": "should successfully login with valid credentials",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11060,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Test: Login with sabur.yinus@gmail.com\n"
+                        },
+                        {
+                          "text": "\n🔑 ========== LOGIN START ==========\n"
+                        },
+                        {
+                          "text": "📧 Email filled: \"sabur.yinus@gmail.com\"\n"
+                        },
+                        {
+                          "text": "🔑 Password filled: \"olamilekan@11\" (length: 13)\n"
+                        },
+                        {
+                          "text": "👁️  Clicked \"Show password\"\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Login button...\n"
+                        },
+                        {
+                          "text": "⏳ Waiting for navigation to dashboard...\n"
+                        },
+                        {
+                          "text": "✅ Navigation detected! URL changed to dashboard\n"
+                        },
+                        {
+                          "text": "📍 Final URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "🔑 ========== LOGIN END ==========\n\n"
+                        },
+                        {
+                          "text": "🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "✅ [isLoggedIn] Confirmed via dashboard URL\n"
+                        },
+                        {
+                          "text": "Login successful\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-02T23:33:46.133Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "29ac412fd126331721f5-1979ae2b4a0ee2dc85e8",
+              "file": "01-login.spec.ts",
+              "line": 34,
+              "column": 7
+            },
+            {
+              "title": "should fail login with invalid credentials",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 38310,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Test: Login with invalid credentials\n"
+                        },
+                        {
+                          "text": "\n🔑 ========== LOGIN START ==========\n"
+                        },
+                        {
+                          "text": "📧 Email filled: \"invalid@example.com\"\n"
+                        },
+                        {
+                          "text": "🔑 Password filled: \"wrongpassword\" (length: 13)\n"
+                        },
+                        {
+                          "text": "👁️  Clicked \"Show password\"\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Login button...\n"
+                        },
+                        {
+                          "text": "⏳ Waiting for navigation to dashboard...\n"
+                        },
+                        {
+                          "text": "[Dialog] \"Invalid credentials. Please try again.\"\n"
+                        },
+                        {
+                          "text": "⚠️  URL did not change. Current URL: https://ndosiautomation.co.za/#practice\n"
+                        },
+                        {
+                          "text": "📍 Final URL: https://ndosiautomation.co.za/#practice\n"
+                        },
+                        {
+                          "text": "🔑 ========== LOGIN END ==========\n\n"
+                        },
+                        {
+                          "text": "🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#practice\n"
+                        },
+                        {
+                          "text": "❌ [isLoggedIn] Login not confirmed\n"
+                        },
+                        {
+                          "text": "Error message: none found\n"
+                        },
+                        {
+                          "text": "Invalid login correctly rejected\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-02T23:33:57.216Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "29ac412fd126331721f5-3d348fcedab7fdaf096a",
+              "file": "01-login.spec.ts",
+              "line": 52,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "02-navigation.spec.ts",
+      "file": "02-navigation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Navigation & Menu",
+          "file": "02-navigation.spec.ts",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should verify user is logged in and on home page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12862,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "\n🔑 ========== LOGIN START ==========\n"
+                        },
+                        {
+                          "text": "📧 Email filled: \"sabur.yinus@gmail.com\"\n"
+                        },
+                        {
+                          "text": "🔑 Password filled: \"olamilekan@11\" (length: 13)\n"
+                        },
+                        {
+                          "text": "👁️  Clicked \"Show password\"\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Login button...\n"
+                        },
+                        {
+                          "text": "⏳ Waiting for navigation to dashboard...\n"
+                        },
+                        {
+                          "text": "✅ Navigation detected! URL changed to dashboard\n"
+                        },
+                        {
+                          "text": "📍 Final URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "🔑 ========== LOGIN END ==========\n\n"
+                        },
+                        {
+                          "text": "🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "✅ [isLoggedIn] Confirmed via dashboard URL\n"
+                        },
+                        {
+                          "text": "Test: Verify authenticated state\n"
+                        },
+                        {
+                          "text": "🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "✅ [isLoggedIn] Confirmed via dashboard URL\n"
+                        },
+                        {
+                          "text": "Logged in. URL: https://ndosiautomation.co.za/#dashboard\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-02T23:34:35.559Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "693a0a9757374728c9b4-841346f194162618f43c",
+              "file": "02-navigation.spec.ts",
+              "line": 8,
+              "column": 7
+            },
+            {
+              "title": "should open the menu when clicking the menu button",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13429,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "\n🔑 ========== LOGIN START ==========\n"
+                        },
+                        {
+                          "text": "📧 Email filled: \"sabur.yinus@gmail.com\"\n"
+                        },
+                        {
+                          "text": "🔑 Password filled: \"olamilekan@11\" (length: 13)\n"
+                        },
+                        {
+                          "text": "👁️  Clicked \"Show password\"\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Login button...\n"
+                        },
+                        {
+                          "text": "⏳ Waiting for navigation to dashboard...\n"
+                        },
+                        {
+                          "text": "✅ Navigation detected! URL changed to dashboard\n"
+                        },
+                        {
+                          "text": "📍 Final URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "🔑 ========== LOGIN END ==========\n\n"
+                        },
+                        {
+                          "text": "🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "✅ [isLoggedIn] Confirmed via dashboard URL\n"
+                        },
+                        {
+                          "text": "Test: Open menu\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Menu button...\n"
+                        },
+                        {
+                          "text": "Menu opened successfully\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-02T23:34:48.451Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "693a0a9757374728c9b4-044e907c152ef44186b9",
+              "file": "02-navigation.spec.ts",
+              "line": 22,
+              "column": 7
+            },
+            {
+              "title": "should navigate to My Profile from the menu",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16681,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "\n🔑 ========== LOGIN START ==========\n"
+                        },
+                        {
+                          "text": "📧 Email filled: \"sabur.yinus@gmail.com\"\n"
+                        },
+                        {
+                          "text": "🔑 Password filled: \"olamilekan@11\" (length: 13)\n"
+                        },
+                        {
+                          "text": "👁️  Clicked \"Show password\"\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Login button...\n"
+                        },
+                        {
+                          "text": "⏳ Waiting for navigation to dashboard...\n"
+                        },
+                        {
+                          "text": "✅ Navigation detected! URL changed to dashboard\n"
+                        },
+                        {
+                          "text": "📍 Final URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "🔑 ========== LOGIN END ==========\n\n"
+                        },
+                        {
+                          "text": "🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "✅ [isLoggedIn] Confirmed via dashboard URL\n"
+                        },
+                        {
+                          "text": "Test: Navigate to My Profile\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Menu button...\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking My Profile...\n"
+                        },
+                        {
+                          "text": "Navigated to: https://ndosiautomation.co.za/#profile\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-02T23:35:01.901Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "693a0a9757374728c9b4-15b281c9364374b3e51a",
+              "file": "02-navigation.spec.ts",
+              "line": 37,
+              "column": 7
+            },
+            {
+              "title": "should display profile information on profile page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 19725,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "\n🔑 ========== LOGIN START ==========\n"
+                        },
+                        {
+                          "text": "📧 Email filled: \"sabur.yinus@gmail.com\"\n"
+                        },
+                        {
+                          "text": "🔑 Password filled: \"olamilekan@11\" (length: 13)\n"
+                        },
+                        {
+                          "text": "👁️  Clicked \"Show password\"\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Login button...\n"
+                        },
+                        {
+                          "text": "⏳ Waiting for navigation to dashboard...\n"
+                        },
+                        {
+                          "text": "✅ Navigation detected! URL changed to dashboard\n"
+                        },
+                        {
+                          "text": "📍 Final URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "🔑 ========== LOGIN END ==========\n\n"
+                        },
+                        {
+                          "text": "🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "✅ [isLoggedIn] Confirmed via dashboard URL\n"
+                        },
+                        {
+                          "text": "Test: Verify profile page content\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Menu button...\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking My Profile...\n"
+                        },
+                        {
+                          "text": "URL: https://ndosiautomation.co.za/#profile\n"
+                        },
+                        {
+                          "text": "🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#profile\n"
+                        },
+                        {
+                          "text": "✅ [isLoggedIn] Confirmed via dashboard URL\n"
+                        },
+                        {
+                          "text": "Profile page verified\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-02T23:35:18.602Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "693a0a9757374728c9b4-4c476416321629d38da1",
+              "file": "02-navigation.spec.ts",
+              "line": 56,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "03-profile-picture-upload.spec.ts",
+      "file": "03-profile-picture-upload.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Profile Picture Upload",
+          "file": "03-profile-picture-upload.spec.ts",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should upload and verify profile picture update",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 33680,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "\n🔑 ========== LOGIN START ==========\n"
+                        },
+                        {
+                          "text": "📧 Email filled: \"sabur.yinus@gmail.com\"\n"
+                        },
+                        {
+                          "text": "🔑 Password filled: \"olamilekan@11\" (length: 13)\n"
+                        },
+                        {
+                          "text": "👁️  Clicked \"Show password\"\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Login button...\n"
+                        },
+                        {
+                          "text": "⏳ Waiting for navigation to dashboard...\n"
+                        },
+                        {
+                          "text": "✅ Navigation detected! URL changed to dashboard\n"
+                        },
+                        {
+                          "text": "📍 Final URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "🔑 ========== LOGIN END ==========\n\n"
+                        },
+                        {
+                          "text": "🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "✅ [isLoggedIn] Confirmed via dashboard URL\n"
+                        },
+                        {
+                          "text": "\n========================================\n"
+                        },
+                        {
+                          "text": "PROFILE UPLOAD TEST\n"
+                        },
+                        {
+                          "text": "========================================\n\n"
+                        },
+                        {
+                          "text": "Step 1: Navigate to My Profile\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Menu button...\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking My Profile...\n"
+                        },
+                        {
+                          "text": "Initial: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790982973_2c6f6f4e.png\n"
+                        },
+                        {
+                          "text": "Step 2: Opening Edit Profile\n"
+                        },
+                        {
+                          "text": "Step 3: Uploading picture\n"
+                        },
+                        {
+                          "text": "Step 4: Saving changes\n"
+                        },
+                        {
+                          "text": "[Dialog] \"Profile updated successfully!\"\n"
+                        },
+                        {
+                          "text": "Step 5: Reloading page to exit edit mode\n"
+                        },
+                        {
+                          "text": "Step 6: Navigating back to My Profile\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Menu button...\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking My Profile...\n"
+                        },
+                        {
+                          "text": "Step 7: Verifying picture changed\n"
+                        },
+                        {
+                          "text": "Updated: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png\n"
+                        },
+                        {
+                          "text": "\nDialogs: [\"Profile updated successfully!\"]\n"
+                        },
+                        {
+                          "text": "Initial URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790982973_2c6f6f4e.png\n"
+                        },
+                        {
+                          "text": "Updated URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png\n"
+                        },
+                        {
+                          "text": "Profile picture URL changed!\n"
+                        },
+                        {
+                          "text": "\nTEST COMPLETE\n\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-02T23:35:38.352Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "102032ca5cd2f3b3cab1-6bb30dbf3377c929202b",
+              "file": "03-profile-picture-upload.spec.ts",
+              "line": 17,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "04-api-validation.spec.ts",
+      "file": "04-api-validation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "API Validation",
+          "file": "04-api-validation.spec.ts",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should capture all API calls during login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9239,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Test: Capture login API calls\n"
+                        },
+                        {
+                          "text": "[API] GET https://ndosiautomation.co.za/static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - Status: 200 (0ms)\n"
+                        },
+                        {
+                          "text": "\n🔑 ========== LOGIN START ==========\n"
+                        },
+                        {
+                          "text": "📧 Email filled: \"sabur.yinus@gmail.com\"\n"
+                        },
+                        {
+                          "text": "🔑 Password filled: \"olamilekan@11\" (length: 13)\n"
+                        },
+                        {
+                          "text": "👁️  Clicked \"Show password\"\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Login button...\n"
+                        },
+                        {
+                          "text": "⏳ Waiting for navigation to dashboard...\n"
+                        },
+                        {
+                          "text": "✅ Navigation detected! URL changed to dashboard\n"
+                        },
+                        {
+                          "text": "[API] GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png - Status: 200 (0ms)\n"
+                        },
+                        {
+                          "text": "📍 Final URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "🔑 ========== LOGIN END ==========\n\n"
+                        },
+                        {
+                          "text": "Total calls: 2\n"
+                        },
+                        {
+                          "text": "Unique endpoints: 2\n"
+                        },
+                        {
+                          "text": "  1. [PASS] GET https://ndosiautomation.co.za/static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - 200\n"
+                        },
+                        {
+                          "text": "  2. [PASS] GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png - 200\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-02T23:36:12.097Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0bb04df8ffb1988eed4d-0afecda8c6c3d57805e6",
+              "file": "04-api-validation.spec.ts",
+              "line": 11,
+              "column": 7
+            },
+            {
+              "title": "should validate all API responses are successful (2xx)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11347,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Test: Validate all API responses\n"
+                        },
+                        {
+                          "text": "[API] GET https://ndosiautomation.co.za/static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - Status: 200 (0ms)\n"
+                        },
+                        {
+                          "text": "\n🔑 ========== LOGIN START ==========\n"
+                        },
+                        {
+                          "text": "📧 Email filled: \"sabur.yinus@gmail.com\"\n"
+                        },
+                        {
+                          "text": "🔑 Password filled: \"olamilekan@11\" (length: 13)\n"
+                        },
+                        {
+                          "text": "👁️  Clicked \"Show password\"\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Login button...\n"
+                        },
+                        {
+                          "text": "⏳ Waiting for navigation to dashboard...\n"
+                        },
+                        {
+                          "text": "✅ Navigation detected! URL changed to dashboard\n"
+                        },
+                        {
+                          "text": "[API] GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png - Status: 200 (0ms)\n"
+                        },
+                        {
+                          "text": "📍 Final URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "🔑 ========== LOGIN END ==========\n\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Menu button...\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking My Profile...\n"
+                        },
+                        {
+                          "text": "\nAPI Validation Summary:\n"
+                        },
+                        {
+                          "text": "  Total calls: 2\n"
+                        },
+                        {
+                          "text": "  Failed calls: 0\n"
+                        },
+                        {
+                          "text": "  Success rate: 100.00%\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-02T23:36:21.359Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0bb04df8ffb1988eed4d-3740779bca92c37f9a0e",
+              "file": "04-api-validation.spec.ts",
+              "line": 35,
+              "column": 7
+            },
+            {
+              "title": "should generate API report with unique endpoints",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11072,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Test: Generate API report\n"
+                        },
+                        {
+                          "text": "[API] GET https://ndosiautomation.co.za/static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - Status: 200 (0ms)\n"
+                        },
+                        {
+                          "text": "\n🔑 ========== LOGIN START ==========\n"
+                        },
+                        {
+                          "text": "📧 Email filled: \"sabur.yinus@gmail.com\"\n"
+                        },
+                        {
+                          "text": "🔑 Password filled: \"olamilekan@11\" (length: 13)\n"
+                        },
+                        {
+                          "text": "👁️  Clicked \"Show password\"\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Login button...\n"
+                        },
+                        {
+                          "text": "⏳ Waiting for navigation to dashboard...\n"
+                        },
+                        {
+                          "text": "✅ Navigation detected! URL changed to dashboard\n"
+                        },
+                        {
+                          "text": "[API] GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png - Status: 200 (0ms)\n"
+                        },
+                        {
+                          "text": "📍 Final URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "🔑 ========== LOGIN END ==========\n\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Menu button...\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking My Profile...\n"
+                        },
+                        {
+                          "text": "\nUnique endpoints captured:\n"
+                        },
+                        {
+                          "text": "  1. /static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - Statuses: 200\n"
+                        },
+                        {
+                          "text": "  2. /API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png - Statuses: 200\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-02T23:36:32.726Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0bb04df8ffb1988eed4d-67a98d3d0d2a039cf559",
+              "file": "04-api-validation.spec.ts",
+              "line": 74,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "05-end-to-end.spec.ts",
+      "file": "05-end-to-end.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "End-to-End: Complete Profile Picture Update",
+          "file": "05-end-to-end.spec.ts",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should complete the entire flow: login -> navigate -> upload -> verify",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 35865,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "\n🔑 ========== LOGIN START ==========\n"
+                        },
+                        {
+                          "text": "📧 Email filled: \"sabur.yinus@gmail.com\"\n"
+                        },
+                        {
+                          "text": "🔑 Password filled: \"olamilekan@11\" (length: 13)\n"
+                        },
+                        {
+                          "text": "👁️  Clicked \"Show password\"\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Login button...\n"
+                        },
+                        {
+                          "text": "⏳ Waiting for navigation to dashboard...\n"
+                        },
+                        {
+                          "text": "✅ Navigation detected! URL changed to dashboard\n"
+                        },
+                        {
+                          "text": "📍 Final URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "🔑 ========== LOGIN END ==========\n\n"
+                        },
+                        {
+                          "text": "🔍 [isLoggedIn] URL: https://ndosiautomation.co.za/#dashboard\n"
+                        },
+                        {
+                          "text": "✅ [isLoggedIn] Confirmed via dashboard URL\n"
+                        },
+                        {
+                          "text": "\n========================================\n"
+                        },
+                        {
+                          "text": "END-TO-END TEST\n"
+                        },
+                        {
+                          "text": "========================================\n\n"
+                        },
+                        {
+                          "text": "Step 1: Logged in via fixture\n"
+                        },
+                        {
+                          "text": "Step 2: Navigate to Profile\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Menu button...\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking My Profile...\n"
+                        },
+                        {
+                          "text": "Step 3: Capture initial picture\n"
+                        },
+                        {
+                          "text": "Initial: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png\n"
+                        },
+                        {
+                          "text": "Step 4: Edit Profile\n"
+                        },
+                        {
+                          "text": "Step 5: Upload new picture\n"
+                        },
+                        {
+                          "text": "Step 6: Save changes\n"
+                        },
+                        {
+                          "text": "[Dialog] \"Profile updated successfully!\"\n"
+                        },
+                        {
+                          "text": "Step 7: Reload page\n"
+                        },
+                        {
+                          "text": "Step 8: Navigate back to profile\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking Menu button...\n"
+                        },
+                        {
+                          "text": "🖱️  Clicking My Profile...\n"
+                        },
+                        {
+                          "text": "Step 9: Verify update\n"
+                        },
+                        {
+                          "text": "Updated: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984223_40fbf961.png\n"
+                        },
+                        {
+                          "text": "\nDialogs: [\"Profile updated successfully!\"]\n"
+                        },
+                        {
+                          "text": "Initial URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984156_925e9db7.png\n"
+                        },
+                        {
+                          "text": "Updated URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790984223_40fbf961.png\n"
+                        },
+                        {
+                          "text": "Profile picture URL changed!\n"
+                        },
+                        {
+                          "text": "\nE2E TEST COMPLETE - Duration: 25355ms\n\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-02T23:36:43.832Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "108dee471f14d4a510a4-9b73b573b96fc9149a53",
+              "file": "05-end-to-end.spec.ts",
+              "line": 17,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-02T23:33:35.894Z",
+    "duration": 224064.88400000002,
+    "expected": 13,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

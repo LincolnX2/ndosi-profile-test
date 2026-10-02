@@ -9,121 +9,111 @@ export class HomePage extends BasePage {
   constructor(page: Page) {
     super(page);
 
-    // ✅ CORRECT menu button selector based on codegen
-    // The button text contains "Menu ▼" with possibly a letter prefix like "S Menu ▼"
     this.menuButton = page.getByRole('button', { name: /Menu/i });
-    
-    // ✅ My Profile button inside the menu
     this.myProfileButton = page.getByRole('button', { name: /My Profile/i });
-
-    // ✅ Optional: Show more details button (may appear on profile)
     this.showMoreDetailsButton = page.getByRole('button', { name: /Show more details/i });
   }
 
   /**
-   * Verify user is logged in by checking multiple indicators
+   * Detects if the user is logged in using multiple indicators.
+   * Prioritized from most reliable to least reliable.
    */
   async isLoggedIn(): Promise<boolean> {
     await this.page.waitForLoadState('networkidle');
-    await this.page.waitForTimeout(3000);
+    await this.page.waitForTimeout(1500); // Let SPA settle
 
-    console.log(`🔍 Checking login. URL: ${this.page.url()}`);
-
-    // Look for menu button (main indicator)
-    try {
-      const menuVisible = await this.menuButton.first().isVisible({ timeout: 5000 });
-      if (menuVisible) {
-        console.log('✅ Login confirmed: Menu button visible');
-        return true;
-      }
-    } catch {
-      // Try other indicators
-    }
-
-    // Fallback indicators
-    const indicators = [
-      'button:has-text("Logout")',
-      'button:has-text("Sign Out")',
-      'button:has-text("My Profile")',
-      '[class*="profile" i]',
-      '[class*="avatar" i]',
-    ];
-
-    for (const selector of indicators) {
-      const count = await this.page.locator(selector).count();
-      if (count > 0) {
-        const visible = await this.page.locator(selector).first().isVisible().catch(() => false);
-        if (visible) {
-          console.log(`✅ Login confirmed via: ${selector}`);
-          return true;
-        }
-      }
-    }
-
-    // Check URL changed
     const url = this.page.url();
-    if (!url.includes('/#practice') && !url.includes('/login')) {
-      console.log(`✅ Login confirmed via URL change: ${url}`);
+    console.log(`🔍 [isLoggedIn] URL: ${url}`);
+
+    // ─── Indicator 1: Dashboard URL (most reliable) ───
+    if (url.includes('/#dashboard') || url.includes('/#profile')) {
+      console.log('✅ [isLoggedIn] Confirmed via dashboard URL');
       return true;
     }
 
-    console.log('⚠️ Login could not be verified');
+    // ─── Indicator 2: "Menu ▼" button (visible only when logged in) ───
+    try {
+      const menuVisible = await this.menuButton.first().isVisible({ timeout: 3000 });
+      if (menuVisible) {
+        console.log('✅ [isLoggedIn] Confirmed via Menu button');
+        return true;
+      }
+    } catch {
+      // Continue
+    }
+
+    // ─── Indicator 3: "Welcome back" greeting text ───
+    try {
+      const welcomeText = this.page.locator('text=/Welcome back/i').first();
+      const welcomeVisible = await welcomeText.isVisible({ timeout: 2000 });
+      if (welcomeVisible) {
+        console.log('✅ [isLoggedIn] Confirmed via "Welcome back" text');
+        return true;
+      }
+    } catch {
+      // Continue
+    }
+
+    // ─── Indicator 4: "My Learning" button ───
+    try {
+      const myLearningVisible = await this.page
+        .getByRole('button', { name: /My Learning/i })
+        .first()
+        .isVisible({ timeout: 2000 })
+        .catch(() => false);
+      if (myLearningVisible) {
+        console.log('✅ [isLoggedIn] Confirmed via "My Learning" button');
+        return true;
+      }
+    } catch {
+      // Continue
+    }
+
+    // ─── Indicator 5: Login-related text absence ───
+    const bodyText = (await this.page.locator('body').innerText().catch(() => '')).toLowerCase();
+    const hasLoginForm = bodyText.includes('login to access learning materials');
+
+    if (!hasLoginForm && bodyText.length > 100) {
+      // Page has substantial content and no login form
+      if (bodyText.includes('logout') || bodyText.includes('sign out')) {
+        console.log('✅ [isLoggedIn] Confirmed via logout button present');
+        return true;
+      }
+    }
+
+    console.log('❌ [isLoggedIn] Login not confirmed');
     return false;
   }
 
-  /**
-   * Click the menu button (top right corner)
-   */
   async clickMenu(): Promise<void> {
-    console.log('🍔 Clicking menu button...');
-    
+    console.log('🖱️  Clicking Menu button...');
     await this.menuButton.first().waitFor({ state: 'visible', timeout: 15000 });
     await this.menuButton.first().click();
-    await this.page.waitForTimeout(1000);
-    
-    console.log('✅ Menu clicked');
+    await this.page.waitForTimeout(800); // Let dropdown open
   }
 
-  /**
-   * Click "My Profile" from the menu
-   */
   async clickMyProfile(): Promise<void> {
-    console.log('👤 Clicking My Profile...');
-    
-    // Wait for menu to expand
-    await this.page.waitForTimeout(500);
-    
+    console.log('🖱️  Clicking My Profile...');
     await this.myProfileButton.first().waitFor({ state: 'visible', timeout: 10000 });
     await this.myProfileButton.first().click();
-    
     await this.page.waitForLoadState('networkidle');
-    await this.page.waitForTimeout(1500);
-    
-    console.log('✅ Navigated to My Profile');
+    await this.page.waitForTimeout(1000);
   }
 
-  /**
-   * Convenience: open menu + go to profile
-   */
   async navigateToProfile(): Promise<void> {
     await this.clickMenu();
     await this.clickMyProfile();
   }
 
-  /**
-   * Click "Show more details" if present (may appear after login)
-   */
   async clickShowMoreDetailsIfPresent(): Promise<boolean> {
     try {
       const visible = await this.showMoreDetailsButton.first().isVisible({ timeout: 2000 });
       if (visible) {
         await this.showMoreDetailsButton.first().click();
-        await this.page.waitForTimeout(500);
-        console.log('✅ Clicked "Show more details"');
         return true;
       }
     } catch {
-      // Button not present, that's OK
+      // Button not present
     }
     return false;
   }

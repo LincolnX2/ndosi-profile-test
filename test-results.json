@@ -3,8 +3,7 @@
     "argv": [
       "C:\\Program Files\\nodejs\\node.exe",
       "C:\\Users\\USER\\Documents\\ndosi-profile-test\\node_modules\\@playwright\\test\\cli.js",
-      "test",
-      "--workers=1"
+      "test"
     ],
     "configFile": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\playwright.config.ts",
     "rootDir": "C:/Users/USER/Documents/ndosi-profile-test/tests",
@@ -18,7 +17,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 2
     },
     "preserveOutput": "always",
     "projects": [
@@ -27,7 +26,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 2
         },
         "id": "chromium",
         "name": "chromium",
@@ -68,7 +67,7 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.62.1",
-    "workers": 1,
+    "workers": 2,
     "webServer": null
   },
   "suites": [
@@ -101,7 +100,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4037,
+                      "duration": 7427,
                       "errors": [],
                       "stdout": [
                         {
@@ -113,7 +112,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T21:11:31.103Z",
+                      "startTime": "2026-10-02T22:34:04.976Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -139,10 +138,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 4541,
+                      "duration": 7513,
                       "errors": [],
                       "stdout": [
                         {
@@ -154,7 +153,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T21:11:35.318Z",
+                      "startTime": "2026-10-02T22:34:04.976Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -169,7 +168,7 @@
             },
             {
               "title": "should successfully login with valid credentials",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -182,43 +181,62 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 10316,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 4518,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\01-login.spec.ts:47:24",
+                        "location": {
+                          "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\01-login.spec.ts",
+                          "column": 24,
+                          "line": 47
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 45 |\u001b[39m     \u001b[90m// Verify login succeeded\u001b[39m\n \u001b[90m 46 |\u001b[39m     \u001b[36mconst\u001b[39m isLoggedIn \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m homePage\u001b[33m.\u001b[39misLoggedIn()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 47 |\u001b[39m     expect(isLoggedIn)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 48 |\u001b[39m\n \u001b[90m 49 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'✅ Login successful'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 50 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\01-login.spec.ts",
+                            "column": 24,
+                            "line": 47
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 45 |\u001b[39m     \u001b[90m// Verify login succeeded\u001b[39m\n \u001b[90m 46 |\u001b[39m     \u001b[36mconst\u001b[39m isLoggedIn \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m homePage\u001b[33m.\u001b[39misLoggedIn()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 47 |\u001b[39m     expect(isLoggedIn)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 48 |\u001b[39m\n \u001b[90m 49 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'✅ Login successful'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 50 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\01-login.spec.ts:47:24\u001b[22m"
+                        }
+                      ],
                       "stdout": [
                         {
                           "text": "🔐 Test: Login with sabur.yinus@gmail.com\n"
-                        },
-                        {
-                          "text": "🔑 Filling email: sabur.yinus@gmail.com\n"
-                        },
-                        {
-                          "text": "🔑 Filling password...\n"
-                        },
-                        {
-                          "text": "🔑 Clicking login button...\n"
-                        },
-                        {
-                          "text": "✅ Login form submitted\n"
-                        },
-                        {
-                          "text": "🔍 Checking login. URL: https://ndosiautomation.co.za/#dashboard\n"
-                        },
-                        {
-                          "text": "✅ Login confirmed: Menu button visible\n"
-                        },
-                        {
-                          "text": "✅ Login successful\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T21:11:39.894Z",
+                      "startTime": "2026-10-02T22:34:12.923Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\01-login-🔐-Login-Function-d6b48-ogin-with-valid-credentials-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\01-login-🔐-Login-Function-d6b48-ogin-with-valid-credentials-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\01-login-🔐-Login-Function-d6b48-ogin-with-valid-credentials-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\01-login.spec.ts",
+                        "column": 24,
+                        "line": 47
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "29ac412fd126331721f5-112f4da6348347a1e2c1",
@@ -239,35 +257,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 13395,
+                      "duration": 7599,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "🔐 Test: Login with invalid credentials\n"
                         },
                         {
-                          "text": "🔑 Filling email: invalid@example.com\n"
-                        },
-                        {
-                          "text": "🔑 Filling password...\n"
-                        },
-                        {
-                          "text": "🔑 Clicking login button...\n"
-                        },
-                        {
                           "text": "⚠️ Dialog: \"Invalid credentials. Please try again.\"\n"
-                        },
-                        {
-                          "text": "✅ Login form submitted\n"
-                        },
-                        {
-                          "text": "🔍 Checking login. URL: https://ndosiautomation.co.za/#practice\n"
-                        },
-                        {
-                          "text": "⚠️ Login could not be verified\n"
                         },
                         {
                           "text": "📝 Error message: none found\n"
@@ -278,7 +278,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T21:11:50.251Z",
+                      "startTime": "2026-10-02T22:34:13.091Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -310,7 +310,7 @@
           "specs": [
             {
               "title": "should verify user is logged in and on home page",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -321,51 +321,60 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 13179,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🔑 Filling email: sabur.yinus@gmail.com\n"
+                      "status": "failed",
+                      "duration": 4161,
+                      "error": {
+                        "message": "Error: Login failed in fixture. Check test-results/fixture-login-failed.png",
+                        "stack": "Error: Login failed in fixture. Check test-results/fixture-login-failed.png\n    at Object.authenticatedPage (C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts:97:13)",
+                        "location": {
+                          "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts",
+                          "column": 13,
+                          "line": 97
                         },
+                        "snippet": "\u001b[90m   at \u001b[39mfixtures\\test-fixtures.ts:97\n\n\u001b[0m \u001b[90m  95 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39misLoggedIn) {\n \u001b[90m  96 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m'test-results/fixture-login-failed.png'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  97 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Login failed in fixture. Check test-results/fixture-login-failed.png'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  98 |\u001b[39m     }\n \u001b[90m  99 |\u001b[39m\n \u001b[90m 100 |\u001b[39m     \u001b[36mawait\u001b[39m use(page)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
                         {
-                          "text": "🔑 Filling password...\n"
-                        },
-                        {
-                          "text": "🔑 Clicking login button...\n"
-                        },
-                        {
-                          "text": "✅ Login form submitted\n"
-                        },
-                        {
-                          "text": "🔍 Checking login. URL: https://ndosiautomation.co.za/#dashboard\n"
-                        },
-                        {
-                          "text": "✅ Login confirmed: Menu button visible\n"
-                        },
-                        {
-                          "text": "🧭 Test: Verify authenticated state\n"
-                        },
-                        {
-                          "text": "🔍 Checking login. URL: https://ndosiautomation.co.za/#dashboard\n"
-                        },
-                        {
-                          "text": "✅ Login confirmed: Menu button visible\n"
-                        },
-                        {
-                          "text": "✅ Logged in. URL: https://ndosiautomation.co.za/#dashboard\n"
+                          "location": {
+                            "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts",
+                            "column": 13,
+                            "line": 97
+                          },
+                          "message": "Error: Login failed in fixture. Check test-results/fixture-login-failed.png\n\n\u001b[90m   at \u001b[39mfixtures\\test-fixtures.ts:97\n\n\u001b[0m \u001b[90m  95 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39misLoggedIn) {\n \u001b[90m  96 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m'test-results/fixture-login-failed.png'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  97 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Login failed in fixture. Check test-results/fixture-login-failed.png'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  98 |\u001b[39m     }\n \u001b[90m  99 |\u001b[39m\n \u001b[90m 100 |\u001b[39m     \u001b[36mawait\u001b[39m use(page)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at Object.authenticatedPage (C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts:97:13)\u001b[22m"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T21:12:03.688Z",
+                      "startTime": "2026-10-02T22:34:18.374Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\02-navigation-🧭-Navigatio-9dd96--logged-in-and-on-home-page-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\02-navigation-🧭-Navigatio-9dd96--logged-in-and-on-home-page-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\02-navigation-🧭-Navigatio-9dd96--logged-in-and-on-home-page-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts",
+                        "column": 13,
+                        "line": 97
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "693a0a9757374728c9b4-04862782a8989a2a4d65",
@@ -375,7 +384,7 @@
             },
             {
               "title": "should open the menu when clicking the menu button",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -386,51 +395,60 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 13215,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🔑 Filling email: sabur.yinus@gmail.com\n"
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 3939,
+                      "error": {
+                        "message": "Error: Login failed in fixture. Check test-results/fixture-login-failed.png",
+                        "stack": "Error: Login failed in fixture. Check test-results/fixture-login-failed.png\n    at Object.authenticatedPage (C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts:97:13)",
+                        "location": {
+                          "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts",
+                          "column": 13,
+                          "line": 97
                         },
+                        "snippet": "\u001b[90m   at \u001b[39mfixtures\\test-fixtures.ts:97\n\n\u001b[0m \u001b[90m  95 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39misLoggedIn) {\n \u001b[90m  96 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m'test-results/fixture-login-failed.png'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  97 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Login failed in fixture. Check test-results/fixture-login-failed.png'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  98 |\u001b[39m     }\n \u001b[90m  99 |\u001b[39m\n \u001b[90m 100 |\u001b[39m     \u001b[36mawait\u001b[39m use(page)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
                         {
-                          "text": "🔑 Filling password...\n"
-                        },
-                        {
-                          "text": "🔑 Clicking login button...\n"
-                        },
-                        {
-                          "text": "✅ Login form submitted\n"
-                        },
-                        {
-                          "text": "🔍 Checking login. URL: https://ndosiautomation.co.za/#dashboard\n"
-                        },
-                        {
-                          "text": "✅ Login confirmed: Menu button visible\n"
-                        },
-                        {
-                          "text": "🧭 Test: Open menu\n"
-                        },
-                        {
-                          "text": "🍔 Clicking menu button...\n"
-                        },
-                        {
-                          "text": "✅ Menu clicked\n"
-                        },
-                        {
-                          "text": "✅ Menu opened successfully\n"
+                          "location": {
+                            "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts",
+                            "column": 13,
+                            "line": 97
+                          },
+                          "message": "Error: Login failed in fixture. Check test-results/fixture-login-failed.png\n\n\u001b[90m   at \u001b[39mfixtures\\test-fixtures.ts:97\n\n\u001b[0m \u001b[90m  95 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39misLoggedIn) {\n \u001b[90m  96 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m'test-results/fixture-login-failed.png'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  97 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Login failed in fixture. Check test-results/fixture-login-failed.png'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  98 |\u001b[39m     }\n \u001b[90m  99 |\u001b[39m\n \u001b[90m 100 |\u001b[39m     \u001b[36mawait\u001b[39m use(page)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at Object.authenticatedPage (C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts:97:13)\u001b[22m"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T21:12:16.897Z",
+                      "startTime": "2026-10-02T22:34:20.724Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\02-navigation-🧭-Navigatio-d2f5b-en-clicking-the-menu-button-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\02-navigation-🧭-Navigatio-d2f5b-en-clicking-the-menu-button-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\02-navigation-🧭-Navigatio-d2f5b-en-clicking-the-menu-button-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts",
+                        "column": 13,
+                        "line": 97
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "693a0a9757374728c9b4-0713f4a6fd4aa1b86a77",
@@ -440,7 +458,7 @@
             },
             {
               "title": "should navigate to My Profile from the menu",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -451,57 +469,60 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 17006,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🔑 Filling email: sabur.yinus@gmail.com\n"
+                      "status": "failed",
+                      "duration": 4768,
+                      "error": {
+                        "message": "Error: Login failed in fixture. Check test-results/fixture-login-failed.png",
+                        "stack": "Error: Login failed in fixture. Check test-results/fixture-login-failed.png\n    at Object.authenticatedPage (C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts:97:13)",
+                        "location": {
+                          "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts",
+                          "column": 13,
+                          "line": 97
                         },
+                        "snippet": "\u001b[90m   at \u001b[39mfixtures\\test-fixtures.ts:97\n\n\u001b[0m \u001b[90m  95 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39misLoggedIn) {\n \u001b[90m  96 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m'test-results/fixture-login-failed.png'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  97 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Login failed in fixture. Check test-results/fixture-login-failed.png'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  98 |\u001b[39m     }\n \u001b[90m  99 |\u001b[39m\n \u001b[90m 100 |\u001b[39m     \u001b[36mawait\u001b[39m use(page)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
                         {
-                          "text": "🔑 Filling password...\n"
-                        },
-                        {
-                          "text": "🔑 Clicking login button...\n"
-                        },
-                        {
-                          "text": "✅ Login form submitted\n"
-                        },
-                        {
-                          "text": "🔍 Checking login. URL: https://ndosiautomation.co.za/#dashboard\n"
-                        },
-                        {
-                          "text": "✅ Login confirmed: Menu button visible\n"
-                        },
-                        {
-                          "text": "🧭 Test: Navigate to My Profile\n"
-                        },
-                        {
-                          "text": "🍔 Clicking menu button...\n"
-                        },
-                        {
-                          "text": "✅ Menu clicked\n"
-                        },
-                        {
-                          "text": "👤 Clicking My Profile...\n"
-                        },
-                        {
-                          "text": "✅ Navigated to My Profile\n"
-                        },
-                        {
-                          "text": "✅ Navigated to: https://ndosiautomation.co.za/#profile\n"
+                          "location": {
+                            "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts",
+                            "column": 13,
+                            "line": 97
+                          },
+                          "message": "Error: Login failed in fixture. Check test-results/fixture-login-failed.png\n\n\u001b[90m   at \u001b[39mfixtures\\test-fixtures.ts:97\n\n\u001b[0m \u001b[90m  95 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39misLoggedIn) {\n \u001b[90m  96 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m'test-results/fixture-login-failed.png'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  97 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Login failed in fixture. Check test-results/fixture-login-failed.png'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  98 |\u001b[39m     }\n \u001b[90m  99 |\u001b[39m\n \u001b[90m 100 |\u001b[39m     \u001b[36mawait\u001b[39m use(page)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at Object.authenticatedPage (C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts:97:13)\u001b[22m"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T21:12:30.143Z",
+                      "startTime": "2026-10-02T22:34:23.755Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\02-navigation-🧭-Navigatio-f5163-to-My-Profile-from-the-menu-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\02-navigation-🧭-Navigatio-f5163-to-My-Profile-from-the-menu-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\02-navigation-🧭-Navigatio-f5163-to-My-Profile-from-the-menu-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts",
+                        "column": 13,
+                        "line": 97
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "693a0a9757374728c9b4-5b7e41754bcd613cd790",
@@ -511,7 +532,7 @@
             },
             {
               "title": "should display profile information on profile page",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -522,66 +543,60 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 21591,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🔑 Filling email: sabur.yinus@gmail.com\n"
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 4333,
+                      "error": {
+                        "message": "Error: Login failed in fixture. Check test-results/fixture-login-failed.png",
+                        "stack": "Error: Login failed in fixture. Check test-results/fixture-login-failed.png\n    at Object.authenticatedPage (C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts:97:13)",
+                        "location": {
+                          "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts",
+                          "column": 13,
+                          "line": 97
                         },
+                        "snippet": "\u001b[90m   at \u001b[39mfixtures\\test-fixtures.ts:97\n\n\u001b[0m \u001b[90m  95 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39misLoggedIn) {\n \u001b[90m  96 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m'test-results/fixture-login-failed.png'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  97 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Login failed in fixture. Check test-results/fixture-login-failed.png'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  98 |\u001b[39m     }\n \u001b[90m  99 |\u001b[39m\n \u001b[90m 100 |\u001b[39m     \u001b[36mawait\u001b[39m use(page)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
                         {
-                          "text": "🔑 Filling password...\n"
-                        },
-                        {
-                          "text": "🔑 Clicking login button...\n"
-                        },
-                        {
-                          "text": "✅ Login form submitted\n"
-                        },
-                        {
-                          "text": "🔍 Checking login. URL: https://ndosiautomation.co.za/#dashboard\n"
-                        },
-                        {
-                          "text": "✅ Login confirmed: Menu button visible\n"
-                        },
-                        {
-                          "text": "🧭 Test: Verify profile page content\n"
-                        },
-                        {
-                          "text": "🍔 Clicking menu button...\n"
-                        },
-                        {
-                          "text": "✅ Menu clicked\n"
-                        },
-                        {
-                          "text": "👤 Clicking My Profile...\n"
-                        },
-                        {
-                          "text": "✅ Navigated to My Profile\n"
-                        },
-                        {
-                          "text": "📍 URL: https://ndosiautomation.co.za/#profile\n"
-                        },
-                        {
-                          "text": "🔍 Checking login. URL: https://ndosiautomation.co.za/#profile\n"
-                        },
-                        {
-                          "text": "✅ Login confirmed: Menu button visible\n"
-                        },
-                        {
-                          "text": "✅ Profile page verified\n"
+                          "location": {
+                            "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts",
+                            "column": 13,
+                            "line": 97
+                          },
+                          "message": "Error: Login failed in fixture. Check test-results/fixture-login-failed.png\n\n\u001b[90m   at \u001b[39mfixtures\\test-fixtures.ts:97\n\n\u001b[0m \u001b[90m  95 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39misLoggedIn) {\n \u001b[90m  96 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m'test-results/fixture-login-failed.png'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  97 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Login failed in fixture. Check test-results/fixture-login-failed.png'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  98 |\u001b[39m     }\n \u001b[90m  99 |\u001b[39m\n \u001b[90m 100 |\u001b[39m     \u001b[36mawait\u001b[39m use(page)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at Object.authenticatedPage (C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts:97:13)\u001b[22m"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T21:12:47.183Z",
+                      "startTime": "2026-10-02T22:34:25.597Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\02-navigation-🧭-Navigatio-c748d-information-on-profile-page-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\02-navigation-🧭-Navigatio-c748d-information-on-profile-page-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\02-navigation-🧭-Navigatio-c748d-information-on-profile-page-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\fixtures\\test-fixtures.ts",
+                        "column": 13,
+                        "line": 97
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "693a0a9757374728c9b4-6a83accd515107beba52",
@@ -608,7 +623,7 @@
           "specs": [
             {
               "title": "should upload and verify profile picture update",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -619,147 +634,67 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 5,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 43450,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 5237,
+                      "error": {
+                        "message": "Error: Login failed — cannot proceed",
+                        "stack": "Error: Login failed — cannot proceed\n    at C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\03-profile-picture-upload.spec.ts:36:13",
+                        "location": {
+                          "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\03-profile-picture-upload.spec.ts",
+                          "column": 13,
+                          "line": 36
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 34 |\u001b[39m     \u001b[36mconst\u001b[39m isLoggedIn \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m homePage\u001b[33m.\u001b[39misLoggedIn()\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39misLoggedIn) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Login failed — cannot proceed'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m     }\n \u001b[90m 38 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'✅ Logged in successfully'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\03-profile-picture-upload.spec.ts",
+                            "column": 13,
+                            "line": 36
+                          },
+                          "message": "Error: Login failed — cannot proceed\n\n\u001b[0m \u001b[90m 34 |\u001b[39m     \u001b[36mconst\u001b[39m isLoggedIn \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m homePage\u001b[33m.\u001b[39misLoggedIn()\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39misLoggedIn) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Login failed — cannot proceed'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m     }\n \u001b[90m 38 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'✅ Logged in successfully'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\03-profile-picture-upload.spec.ts:36:13\u001b[22m"
+                        }
+                      ],
                       "stdout": [
                         {
                           "text": "\n📸 ═══════ PROFILE UPLOAD TEST ═══════\n\n"
                         },
                         {
                           "text": "🔑 Step 0: Logging in...\n"
-                        },
-                        {
-                          "text": "🔑 Filling email: sabur.yinus@gmail.com\n"
-                        },
-                        {
-                          "text": "🔑 Filling password...\n"
-                        },
-                        {
-                          "text": "🔑 Clicking login button...\n"
-                        },
-                        {
-                          "text": "✅ Login form submitted\n"
-                        },
-                        {
-                          "text": "🔍 Checking login. URL: https://ndosiautomation.co.za/#dashboard\n"
-                        },
-                        {
-                          "text": "✅ Login confirmed: Menu button visible\n"
-                        },
-                        {
-                          "text": "✅ Logged in successfully\n"
-                        },
-                        {
-                          "text": "📍 Step 1: Navigate to My Profile\n"
-                        },
-                        {
-                          "text": "🍔 Clicking menu button...\n"
-                        },
-                        {
-                          "text": "✅ Menu clicked\n"
-                        },
-                        {
-                          "text": "👤 Clicking My Profile...\n"
-                        },
-                        {
-                          "text": "✅ Navigated to My Profile\n"
-                        },
-                        {
-                          "text": "🔍 Looking for profile picture...\n"
-                        },
-                        {
-                          "text": "✅ Found via \".nav-profile-avatar\": https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975211_e1b332f9.png\n"
-                        },
-                        {
-                          "text": "📸 Initial: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975211_e1b332f9.png\n"
-                        },
-                        {
-                          "text": "📍 Step 2: Opening Edit Profile\n"
-                        },
-                        {
-                          "text": "✏️ Clicking Edit Profile...\n"
-                        },
-                        {
-                          "text": "✅ Edit profile opened\n"
-                        },
-                        {
-                          "text": "📍 Step 3: Uploading picture\n"
-                        },
-                        {
-                          "text": "📤 Uploading: C:\\Users\\USER\\Documents\\ndosi-profile-test\\fixtures\\test-image.png\n"
-                        },
-                        {
-                          "text": "✅ File set on input directly\n"
-                        },
-                        {
-                          "text": "📍 Step 4: Saving changes\n"
-                        },
-                        {
-                          "text": "💾 Saving changes...\n"
-                        },
-                        {
-                          "text": "⚠️ Dialog: \"Profile updated successfully!\"\n"
-                        },
-                        {
-                          "text": "✅ Changes saved\n"
-                        },
-                        {
-                          "text": "📍 Step 5: Reloading page to exit edit mode\n"
-                        },
-                        {
-                          "text": "📍 Step 6: Navigating back to My Profile\n"
-                        },
-                        {
-                          "text": "🍔 Clicking menu button...\n"
-                        },
-                        {
-                          "text": "✅ Menu clicked\n"
-                        },
-                        {
-                          "text": "👤 Clicking My Profile...\n"
-                        },
-                        {
-                          "text": "✅ Navigated to My Profile\n"
-                        },
-                        {
-                          "text": "📍 Step 7: Verifying picture changed\n"
-                        },
-                        {
-                          "text": "🔍 Looking for profile picture...\n"
-                        },
-                        {
-                          "text": "✅ Found via \".nav-profile-avatar\": https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png\n"
-                        },
-                        {
-                          "text": "📸 Updated: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png\n"
-                        },
-                        {
-                          "text": "\n📋 Dialogs: [\"Profile updated successfully!\"]\n"
-                        },
-                        {
-                          "text": "📸 Initial URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975211_e1b332f9.png\n"
-                        },
-                        {
-                          "text": "📸 Updated URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png\n"
-                        },
-                        {
-                          "text": "✅ Profile picture URL changed!\n"
-                        },
-                        {
-                          "text": "\n✅ ═══════ TEST COMPLETE ═══════\n\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T21:13:08.807Z",
+                      "startTime": "2026-10-02T22:34:29.844Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\03-profile-picture-upload--07777-rify-profile-picture-update-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\03-profile-picture-upload--07777-rify-profile-picture-update-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\03-profile-picture-upload--07777-rify-profile-picture-update-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\03-profile-picture-upload.spec.ts",
+                        "column": 13,
+                        "line": 36
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "102032ca5cd2f3b3cab1-edcd8fd7fc63dff5f0c2",
@@ -797,10 +732,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 6649,
+                      "duration": 4090,
                       "errors": [],
                       "stdout": [
                         {
@@ -810,36 +745,18 @@
                           "text": "📡 API: GET https://ndosiautomation.co.za/static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - Status: 200\n"
                         },
                         {
-                          "text": "🔑 Filling email: sabur.yinus@gmail.com\n"
+                          "text": "📡 Total calls: 1\n"
                         },
                         {
-                          "text": "🔑 Filling password...\n"
-                        },
-                        {
-                          "text": "🔑 Clicking login button...\n"
-                        },
-                        {
-                          "text": "📡 API: GET https://www.ndosiautomation.co.za/API/uploads/profile-images/0d196d68-e678-4ae9-a537-791c7079bca1_1783008812_355aa253.png - Status: 200\n"
-                        },
-                        {
-                          "text": "✅ Login form submitted\n"
-                        },
-                        {
-                          "text": "📡 Total calls: 2\n"
-                        },
-                        {
-                          "text": "📋 Unique endpoints: 2\n"
+                          "text": "📋 Unique endpoints: 1\n"
                         },
                         {
                           "text": "  1. ✅ GET https://ndosiautomation.co.za/static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - 200\n"
-                        },
-                        {
-                          "text": "  2. ✅ GET https://www.ndosiautomation.co.za/API/uploads/profile-images/0d196d68-e678-4ae9-a537-791c7079bca1_1783008812_355aa253.png - 200\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T21:13:52.308Z",
+                      "startTime": "2026-10-02T22:34:31.901Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -854,7 +771,7 @@
             },
             {
               "title": "should validate all API responses are successful (2xx)",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -865,11 +782,38 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 7,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 14974,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 33391,
+                      "error": {
+                        "message": "TimeoutError: page.waitForEvent: Timeout 15000ms exceeded while waiting for event \"filechooser\"\n=========================== logs ===========================\nwaiting for event \"filechooser\"\n============================================================",
+                        "stack": "TimeoutError: page.waitForEvent: Timeout 15000ms exceeded while waiting for event \"filechooser\"\n=========================== logs ===========================\nwaiting for event \"filechooser\"\n============================================================\n    at ProfilePage.uploadProfilePicture (C:\\Users\\USER\\Documents\\ndosi-profile-test\\src\\pages\\ProfilePage.ts:31:44)\n    at C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\04-api-validation.spec.ts:51:5",
+                        "location": {
+                          "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\src\\pages\\ProfilePage.ts",
+                          "column": 44,
+                          "line": 31
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\src\\pages\\ProfilePage.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mfileInput\u001b[33m.\u001b[39msetInputFiles(filePath)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     } \u001b[36mcatch\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m       \u001b[36mconst\u001b[39m fileChooserPromise \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForEvent(\u001b[32m'filechooser'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mchoosePhotoButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m       \u001b[36mconst\u001b[39m fileChooser \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m fileChooserPromise\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m       \u001b[36mawait\u001b[39m fileChooser\u001b[33m.\u001b[39msetFiles(filePath)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\src\\pages\\ProfilePage.ts",
+                            "column": 44,
+                            "line": 31
+                          },
+                          "message": "TimeoutError: page.waitForEvent: Timeout 15000ms exceeded while waiting for event \"filechooser\"\n=========================== logs ===========================\nwaiting for event \"filechooser\"\n============================================================\n\n\u001b[90m   at \u001b[39m..\\src\\pages\\ProfilePage.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mfileInput\u001b[33m.\u001b[39msetInputFiles(filePath)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     } \u001b[36mcatch\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m       \u001b[36mconst\u001b[39m fileChooserPromise \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForEvent(\u001b[32m'filechooser'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mchoosePhotoButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m       \u001b[36mconst\u001b[39m fileChooser \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m fileChooserPromise\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m       \u001b[36mawait\u001b[39m fileChooser\u001b[33m.\u001b[39msetFiles(filePath)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at ProfilePage.uploadProfilePicture (C:\\Users\\USER\\Documents\\ndosi-profile-test\\src\\pages\\ProfilePage.ts:31:44)\u001b[22m\n\u001b[2m    at C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\04-api-validation.spec.ts:51:5\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\src\\pages\\ProfilePage.ts",
+                            "column": 36,
+                            "line": 32
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('?? Choose Photo')\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\src\\pages\\ProfilePage.ts:32\n\n\u001b[0m \u001b[90m 30 |\u001b[39m     } \u001b[36mcatch\u001b[39m {\n \u001b[90m 31 |\u001b[39m       \u001b[36mconst\u001b[39m fileChooserPromise \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForEvent(\u001b[32m'filechooser'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mchoosePhotoButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       \u001b[36mconst\u001b[39m fileChooser \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m fileChooserPromise\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m       \u001b[36mawait\u001b[39m fileChooser\u001b[33m.\u001b[39msetFiles(filePath)\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m     }\u001b[0m\n\u001b[2m    at ProfilePage.uploadProfilePicture (C:\\Users\\USER\\Documents\\ndosi-profile-test\\src\\pages\\ProfilePage.ts:32:36)\u001b[22m\n\u001b[2m    at C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\04-api-validation.spec.ts:51:5\u001b[22m"
+                        }
+                      ],
                       "stdout": [
                         {
                           "text": "📡 Test: Validate all API responses\n"
@@ -878,68 +822,38 @@
                           "text": "📡 API: GET https://ndosiautomation.co.za/static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - Status: 200\n"
                         },
                         {
-                          "text": "🔑 Filling email: sabur.yinus@gmail.com\n"
-                        },
-                        {
-                          "text": "🔑 Filling password...\n"
-                        },
-                        {
-                          "text": "🔑 Clicking login button...\n"
-                        },
-                        {
-                          "text": "📡 API: GET https://www.ndosiautomation.co.za/API/uploads/profile-images/0d196d68-e678-4ae9-a537-791c7079bca1_1783008812_355aa253.png - Status: 200\n"
-                        },
-                        {
-                          "text": "✅ Login form submitted\n"
-                        },
-                        {
-                          "text": "🍔 Clicking menu button...\n"
-                        },
-                        {
-                          "text": "📡 API: GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png - Status: 200\n"
-                        },
-                        {
-                          "text": "✅ Menu clicked\n"
-                        },
-                        {
-                          "text": "👤 Clicking My Profile...\n"
-                        },
-                        {
-                          "text": "✅ Navigated to My Profile\n"
-                        },
-                        {
-                          "text": "✏️ Clicking Edit Profile...\n"
-                        },
-                        {
-                          "text": "✅ Edit profile opened\n"
-                        },
-                        {
-                          "text": "📤 Uploading: C:\\Users\\USER\\Documents\\ndosi-profile-test\\fixtures\\test-image.png\n"
-                        },
-                        {
-                          "text": "✅ File set on input directly\n"
-                        },
-                        {
-                          "text": "\n📊 API Validation Summary:\n"
-                        },
-                        {
-                          "text": "  Total calls: 3\n"
-                        },
-                        {
-                          "text": "  Failed calls: 0\n"
-                        },
-                        {
-                          "text": "  Success rate: 100.00%\n"
+                          "text": "📡 API: GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790977007_a36f85e5.png - Status: 200\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T21:13:58.992Z",
+                      "startTime": "2026-10-02T22:34:37.489Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\04-api-validation-📡-API-V-d9b59-sponses-are-successful-2xx--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\04-api-validation-📡-API-V-d9b59-sponses-are-successful-2xx--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\04-api-validation-📡-API-V-d9b59-sponses-are-successful-2xx--chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\src\\pages\\ProfilePage.ts",
+                        "column": 44,
+                        "line": 31
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "0bb04df8ffb1988eed4d-26d9a95766b8b0101c5b",
@@ -960,10 +874,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 9770,
+                      "duration": 5487,
                       "errors": [],
                       "stdout": [
                         {
@@ -973,51 +887,18 @@
                           "text": "📡 API: GET https://ndosiautomation.co.za/static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - Status: 200\n"
                         },
                         {
-                          "text": "🔑 Filling email: sabur.yinus@gmail.com\n"
-                        },
-                        {
-                          "text": "🔑 Filling password...\n"
-                        },
-                        {
-                          "text": "🔑 Clicking login button...\n"
-                        },
-                        {
-                          "text": "📡 API: GET https://www.ndosiautomation.co.za/API/uploads/profile-images/0d196d68-e678-4ae9-a537-791c7079bca1_1783008812_355aa253.png - Status: 200\n"
-                        },
-                        {
-                          "text": "✅ Login form submitted\n"
-                        },
-                        {
-                          "text": "🍔 Clicking menu button...\n"
-                        },
-                        {
-                          "text": "📡 API: GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png - Status: 200\n"
-                        },
-                        {
-                          "text": "✅ Menu clicked\n"
-                        },
-                        {
-                          "text": "👤 Clicking My Profile...\n"
-                        },
-                        {
-                          "text": "✅ Navigated to My Profile\n"
-                        },
-                        {
                           "text": "\n📋 Unique endpoints captured:\n"
                         },
                         {
                           "text": "  1. /static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - Statuses: 200\n"
                         },
                         {
-                          "text": "  2. /API/uploads/profile-images/0d196d68-e678-4ae9-a537-791c7079bca1_1783008812_355aa253.png - Statuses: 200\n"
-                        },
-                        {
-                          "text": "  3. /API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png - Statuses: 200\n"
+                          "text": "📡 API: GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790977007_a36f85e5.png - Status: 200\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T21:14:13.992Z",
+                      "startTime": "2026-10-02T22:34:36.215Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1049,7 +930,7 @@
           "specs": [
             {
               "title": "should complete the entire flow: login → navigate → upload → verify",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -1060,153 +941,67 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 46388,
-                      "errors": [],
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 3423,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\05-end-to-end.spec.ts:35:24",
+                        "location": {
+                          "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\05-end-to-end.spec.ts",
+                          "column": 24,
+                          "line": 35
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 33 |\u001b[39m\n \u001b[90m 34 |\u001b[39m     \u001b[36mconst\u001b[39m isLoggedIn \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m homePage\u001b[33m.\u001b[39misLoggedIn()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m     expect(isLoggedIn)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'✅ Login successful'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m'test-results/05-e2e/01-after-login.png'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 38 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\05-end-to-end.spec.ts",
+                            "column": 24,
+                            "line": 35
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 33 |\u001b[39m\n \u001b[90m 34 |\u001b[39m     \u001b[36mconst\u001b[39m isLoggedIn \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m homePage\u001b[33m.\u001b[39misLoggedIn()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m     expect(isLoggedIn)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'✅ Login successful'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m'test-results/05-e2e/01-after-login.png'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 38 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\05-end-to-end.spec.ts:35:24\u001b[22m"
+                        }
+                      ],
                       "stdout": [
                         {
                           "text": "\n🎯 ═══════ END-TO-END TEST ═══════\n\n"
                         },
                         {
                           "text": "🔐 Step 1: Login\n"
-                        },
-                        {
-                          "text": "🔑 Filling email: sabur.yinus@gmail.com\n"
-                        },
-                        {
-                          "text": "🔑 Filling password...\n"
-                        },
-                        {
-                          "text": "🔑 Clicking login button...\n"
-                        },
-                        {
-                          "text": "✅ Login form submitted\n"
-                        },
-                        {
-                          "text": "🔍 Checking login. URL: https://ndosiautomation.co.za/#dashboard\n"
-                        },
-                        {
-                          "text": "✅ Login confirmed: Menu button visible\n"
-                        },
-                        {
-                          "text": "✅ Login successful\n"
-                        },
-                        {
-                          "text": "📋 Step 2: Navigate to Profile\n"
-                        },
-                        {
-                          "text": "🍔 Clicking menu button...\n"
-                        },
-                        {
-                          "text": "✅ Menu clicked\n"
-                        },
-                        {
-                          "text": "👤 Clicking My Profile...\n"
-                        },
-                        {
-                          "text": "✅ Navigated to My Profile\n"
-                        },
-                        {
-                          "text": "📸 Step 3: Capture initial picture\n"
-                        },
-                        {
-                          "text": "🔍 Looking for profile picture...\n"
-                        },
-                        {
-                          "text": "✅ Found via \".nav-profile-avatar\": https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png\n"
-                        },
-                        {
-                          "text": "📸 Initial: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png\n"
-                        },
-                        {
-                          "text": "✏️ Step 4: Edit Profile\n"
-                        },
-                        {
-                          "text": "✏️ Clicking Edit Profile...\n"
-                        },
-                        {
-                          "text": "✅ Edit profile opened\n"
-                        },
-                        {
-                          "text": "📤 Step 5: Upload new picture\n"
-                        },
-                        {
-                          "text": "📤 Uploading: C:\\Users\\USER\\Documents\\ndosi-profile-test\\fixtures\\test-image.png\n"
-                        },
-                        {
-                          "text": "✅ File set on input directly\n"
-                        },
-                        {
-                          "text": "💾 Step 6: Save changes\n"
-                        },
-                        {
-                          "text": "💾 Saving changes...\n"
-                        },
-                        {
-                          "text": "⚠️ Dialog: \"Profile updated successfully!\"\n"
-                        },
-                        {
-                          "text": "✅ Changes saved\n"
-                        },
-                        {
-                          "text": "🔄 Step 7: Reload page\n"
-                        },
-                        {
-                          "text": "📋 Step 8: Navigate back to profile\n"
-                        },
-                        {
-                          "text": "🍔 Clicking menu button...\n"
-                        },
-                        {
-                          "text": "✅ Menu clicked\n"
-                        },
-                        {
-                          "text": "👤 Clicking My Profile...\n"
-                        },
-                        {
-                          "text": "✅ Navigated to My Profile\n"
-                        },
-                        {
-                          "text": "📊 Step 9: Verify update\n"
-                        },
-                        {
-                          "text": "🔍 Looking for profile picture...\n"
-                        },
-                        {
-                          "text": "✅ Found via \".nav-profile-avatar\": https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975688_54e389e9.png\n"
-                        },
-                        {
-                          "text": "📸 Updated: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975688_54e389e9.png\n"
-                        },
-                        {
-                          "text": "\n📋 Dialogs: [\"Profile updated successfully!\"]\n"
-                        },
-                        {
-                          "text": "📸 Initial URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png\n"
-                        },
-                        {
-                          "text": "📸 Updated URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975688_54e389e9.png\n"
-                        },
-                        {
-                          "text": "✅ Profile picture URL changed!\n"
-                        },
-                        {
-                          "text": "\n✅ ═══════ E2E TEST COMPLETE ═══════\n"
-                        },
-                        {
-                          "text": "⏱️ Total duration: 45526ms\n\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T21:14:23.792Z",
+                      "startTime": "2026-10-02T22:34:41.749Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\05-end-to-end-🎯-End-to-En-85eae--navigate-→-upload-→-verify-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\05-end-to-end-🎯-End-to-En-85eae--navigate-→-upload-→-verify-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\05-end-to-end-🎯-End-to-En-85eae--navigate-→-upload-→-verify-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\05-end-to-end.spec.ts",
+                        "column": 24,
+                        "line": 35
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "108dee471f14d4a510a4-12d42bade7a80265522b",
@@ -1221,11 +1016,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-02T21:11:30.291Z",
-    "duration": 220069.16999999998,
-    "expected": 13,
+    "startTime": "2026-10-02T22:34:03.905Z",
+    "duration": 67582.57400000001,
+    "expected": 5,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 8,
     "flaky": 0
   }
 }

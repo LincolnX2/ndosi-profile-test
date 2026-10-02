@@ -17,17 +17,13 @@ type TestFixtures = {
 };
 
 export const test = base.extend<TestFixtures>({
-
-  // ─────────────────────────────────────────────
-  // Global dialog handler (runs for EVERY test)
-  // ─────────────────────────────────────────────
+  // Global dialog handler (runs for every test)
   page: async ({ page }, use) => {
-    // ✅ Single, consolidated dialog handler
     const dialogMessages: string[] = [];
     page.on('dialog', async (dialog) => {
       const msg = dialog.message();
       dialogMessages.push(msg);
-      console.log(`⚠️ Dialog: "${msg}"`);
+      console.log(`[Dialog] "${msg}"`);
       await dialog.accept().catch(() => {});
     });
 
@@ -62,14 +58,20 @@ export const test = base.extend<TestFixtures>({
         url.includes('/image') ||
         url.includes('/media')
       ) {
+        // Capture actual request timing
+        const timing = response.request().timing();
+        const duration = timing.responseEnd > 0 && timing.requestStart > 0
+          ? Math.round(timing.responseEnd - timing.requestStart)
+          : 0;
+
         apiValidator.addApiCall({
           url: url,
           method: response.request().method(),
           status: response.status(),
           timestamp: new Date().toISOString(),
-          duration: 0,
+          duration: duration,
         });
-        console.log(`📡 API: ${response.request().method()} ${url} - Status: ${response.status()}`);
+        console.log(`[API] ${response.request().method()} ${url} - Status: ${response.status()} (${duration}ms)`);
       }
     });
 
