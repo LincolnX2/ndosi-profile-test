@@ -3,105 +3,116 @@ import { BasePage } from './BasePage';
 
 export class ProfilePage extends BasePage {
   readonly editProfileButton: Locator;
+  readonly choosePhotoButton: Locator;
   readonly fileInput: Locator;
-  readonly profilePicture: Locator;
   readonly saveButton: Locator;
-  readonly successMessage: Locator;
-  readonly loadingIndicator: Locator;
-  readonly cancelButton: Locator;
+  readonly profilePicture: Locator;
 
   constructor(page: Page) {
     super(page);
-    this.editProfileButton = page.locator(
-      'button:has-text("Edit Profile"), a:has-text("Edit Profile"), button:has-text("Edit")'
-    );
-    this.fileInput = page.locator('input[type="file"]');
-    this.profilePicture = page.locator(
-      'img[alt*="Profile"], img[src*="profile"], .profile-image, .avatar'
-    );
-    this.saveButton = page.locator(
-      'button:has-text("Save"), button:has-text("Update"), button[type="submit"]'
-    );
-    this.successMessage = page.locator(
-      '.success-message, .alert-success, [role="status"]'
-    );
-    this.loadingIndicator = page.locator(
-      '.loading, .spinner, [role="progressbar"]'
-    );
-    this.cancelButton = page.locator(
-      'button:has-text("Cancel"), a:has-text("Cancel")'
-    );
+
+    this.editProfileButton = page.getByRole('button', { name: /Edit Profile/i });
+    this.choosePhotoButton = page.getByText('📷 Choose Photo');
+    this.fileInput = page.getByLabel('📷 Choose Photo');
+    this.saveButton = page.getByRole('button', { name: /Save Changes/i });
+    this.profilePicture = page.locator('.nav-profile-avatar').last();
   }
 
-  /**
-   * Click the "Edit Profile" button
-   */
   async clickEditProfile(): Promise<void> {
-    await this.editProfileButton.first().waitFor({ state: 'visible', timeout: 10000 });
+    console.log('✏️ Clicking Edit Profile...');
+    await this.editProfileButton.first().waitFor({ state: 'visible', timeout: 15000 });
     await this.editProfileButton.first().click();
-    await this.page.waitForTimeout(1000);
+    await this.page.waitForTimeout(1500);
+    console.log('✅ Edit profile opened');
   }
 
-  /**
-   * Upload a new profile picture
-   */
   async uploadProfilePicture(filePath: string): Promise<void> {
-    // Wait for file input to be available
-    await this.fileInput.waitFor({ state: 'visible', timeout: 10000 });
-
-    // Set the file
-    await this.fileInput.setInputFiles(filePath);
-    await this.page.waitForTimeout(1000);
-
-    // Wait for loading indicator to appear then disappear
+    console.log(`📤 Uploading: ${filePath}`);
     try {
-      await this.loadingIndicator.waitFor({ state: 'visible', timeout: 3000 });
-      await this.loadingIndicator.waitFor({ state: 'hidden', timeout: 30000 });
+      await this.fileInput.waitFor({ state: 'attached', timeout: 10000 });
+      await this.fileInput.setInputFiles(filePath);
+      console.log('✅ File set on input directly');
     } catch {
-      await this.page.waitForTimeout(2000);
+      console.log('⚠️ Trying file chooser approach...');
+      const fileChooserPromise = this.page.waitForEvent('filechooser');
+      await this.choosePhotoButton.click();
+      const fileChooser = await fileChooserPromise;
+      await fileChooser.setFiles(filePath);
+      console.log('✅ File set via file chooser');
     }
-
-    // Click save if the button is visible
-    if (await this.saveButton.first().isVisible().catch(() => false)) {
-      await this.saveButton.first().click();
-      await this.page.waitForLoadState('networkidle');
-    }
+    await this.page.waitForTimeout(3000);
   }
 
-  /**
-   * Get the current profile picture source URL
-   */
-  async getProfilePictureSrc(): Promise<string | null> {
-    await this.profilePicture.first().waitFor({ state: 'visible', timeout: 5000 });
-    return await this.profilePicture.first().getAttribute('src');
+  async saveChanges(): Promise<void> {
+    console.log('💾 Saving changes...');
+    await this.saveButton.first().waitFor({ state: 'visible', timeout: 10000 });
+    await this.saveButton.first().click();
+    await this.page.waitForLoadState('networkidle');
+    await this.page.waitForTimeout(4000);
+    console.log('✅ Changes saved');
   }
 
-  /**
-   * Wait for profile update success message or image change
-   */
   async waitForProfileUpdate(): Promise<void> {
-    try {
-      await this.successMessage.first().waitFor({ state: 'visible', timeout: 10000 });
-      console.log('✅ Success message displayed');
-    } catch {
-      console.log('ℹ️ No success message; waiting for image update');
-      await this.page.waitForTimeout(3000);
+    console.log('⏳ Waiting for page to stabilize after save...');
+    await this.page.waitForLoadState('networkidle');
+    await this.page.waitForTimeout(3000);
+    console.log('✅ Page stabilized');
+  }
+
+  async getProfilePictureSrc(): Promise<string | null> {
+    console.log('🔍 Looking for profile picture...');
+
+    const selectors = [
+      '.profile-section .nav-profile-avatar',
+      '.profile-grid .nav-profile-avatar',
+      '.nav-profile-avatar',
+    ];
+
+    for (const selector of selectors) {
+      try {
+        const elements = await this.page.locator(selector).all();
+
+        for (const el of elements) {
+          const visible = await el.isVisible().catch(() => false);
+          if (!visible) continue;
+
+          const style = await el.getAttribute('style').catch(() => '');
+          if (!style) continue;
+
+          const match = style.match(/background-image:\s*url\(["']?([^"')]+)["']?\)/);
+          if (match && match[1]) {
+            console.log(`✅ Found via "${selector}": ${match[1]}`);
+            return match[1];
+          }
+        }
+      } catch {
+        // Continue to next selector
+      }
     }
+
+    console.log('⚠️ Avatar not found with any selector');
+    await this.page.screenshot({
+      path: `test-results/avatar-not-found-${Date.now()}.png`,
+      fullPage: true,
+    });
+    return null;
   }
 
-  /**
-   * Check if profile picture is visible
-   */
   async isProfilePictureVisible(): Promise<boolean> {
-    return await this.profilePicture.first().isVisible({ timeout: 3000 }).catch(() => false);
+    return await this.profilePicture.isVisible({ timeout: 5000 }).catch(() => false);
   }
 
-  /**
-   * Cancel editing
-   */
-  async cancelEdit(): Promise<void> {
-    if (await this.cancelButton.first().isVisible().catch(() => false)) {
-      await this.cancelButton.first().click();
+  async debugImages(): Promise<void> {
+    const avatars = await this.page.locator('.nav-profile-avatar').all();
+    console.log(`\n👤 Found ${avatars.length} profile avatars:\n`);
+
+    for (let i = 0; i < avatars.length; i++) {
+      const avatar = avatars[i];
+      const style = await avatar.getAttribute('style').catch(() => '');
+      const visible = await avatar.isVisible().catch(() => false);
+      console.log(`${i + 1}. [${visible ? '👁️' : '🙈'}]`);
+      console.log(`   style: ${style?.substring(0, 120)}`);
+      console.log('');
     }
   }
 }

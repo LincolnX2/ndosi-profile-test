@@ -6,45 +6,52 @@ import { ApiValidator } from '../../src/utils/api-validator';
 import { ReportGenerator } from '../../src/utils/report-generator';
 import { environment } from '../../config/environment.config';
 
-// ─────────────────────────────────────────────────────────────
-// Custom Fixtures: shared across all tests
-// ─────────────────────────────────────────────────────────────
 type TestFixtures = {
   loginPage: LoginPage;
   homePage: HomePage;
   profilePage: ProfilePage;
   apiValidator: ApiValidator;
   reportGenerator: ReportGenerator;
-  authenticatedPage: Page; // Already logged in!
+  authenticatedPage: Page;
   testCredentials: { email: string; password: string };
 };
 
 export const test = base.extend<TestFixtures>({
-  // ─────────────────────────────────────────────────────────────
-  // Page Object Fixtures
-  // ─────────────────────────────────────────────────────────────
+
+  // ─────────────────────────────────────────────
+  // Global dialog handler (runs for EVERY test)
+  // ─────────────────────────────────────────────
+  page: async ({ page }, use) => {
+    // ✅ Single, consolidated dialog handler
+    const dialogMessages: string[] = [];
+    page.on('dialog', async (dialog) => {
+      const msg = dialog.message();
+      dialogMessages.push(msg);
+      console.log(`⚠️ Dialog: "${msg}"`);
+      await dialog.accept().catch(() => {});
+    });
+
+    // Store for later access
+    (page as any).__dialogMessages = dialogMessages;
+
+    await use(page);
+  },
+
   loginPage: async ({ page }, use) => {
-    const loginPage = new LoginPage(page);
-    await use(loginPage);
+    await use(new LoginPage(page));
   },
 
   homePage: async ({ page }, use) => {
-    const homePage = new HomePage(page);
-    await use(homePage);
+    await use(new HomePage(page));
   },
 
   profilePage: async ({ page }, use) => {
-    const profilePage = new ProfilePage(page);
-    await use(profilePage);
+    await use(new ProfilePage(page));
   },
 
-  // ─────────────────────────────────────────────────────────────
-  // Utility Fixtures
-  // ─────────────────────────────────────────────────────────────
   apiValidator: async ({ page }, use) => {
     const apiValidator = new ApiValidator();
 
-    // Auto-capture API calls for every test
     page.on('response', async (response) => {
       const url = response.url();
       if (
@@ -70,13 +77,9 @@ export const test = base.extend<TestFixtures>({
   },
 
   reportGenerator: async ({}, use) => {
-    const reportGenerator = new ReportGenerator();
-    await use(reportGenerator);
+    await use(new ReportGenerator());
   },
 
-  // ─────────────────────────────────────────────────────────────
-  // Test Credentials Fixture
-  // ─────────────────────────────────────────────────────────────
   testCredentials: async ({}, use) => {
     await use({
       email: environment.testEmail,
@@ -84,18 +87,14 @@ export const test = base.extend<TestFixtures>({
     });
   },
 
-  // ─────────────────────────────────────────────────────────────
-  // Pre-authenticated Page Fixture (for tests that need login)
-  // ─────────────────────────────────────────────────────────────
   authenticatedPage: async ({ page, loginPage, homePage, testCredentials }, use) => {
-    // Navigate and login
     await loginPage.goto();
     await loginPage.login(testCredentials.email, testCredentials.password);
 
-    // Verify login succeeded
     const isLoggedIn = await homePage.isLoggedIn();
     if (!isLoggedIn) {
-      throw new Error('Login failed in fixture setup');
+      await page.screenshot({ path: 'test-results/fixture-login-failed.png' });
+      throw new Error('Login failed in fixture. Check test-results/fixture-login-failed.png');
     }
 
     await use(page);

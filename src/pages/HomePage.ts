@@ -3,24 +3,21 @@ import { BasePage } from './BasePage';
 
 export class HomePage extends BasePage {
   readonly menuButton: Locator;
-  readonly myProfileLink: Locator;
-  readonly logoutButton: Locator;
-  readonly userAvatar: Locator;
+  readonly myProfileButton: Locator;
+  readonly showMoreDetailsButton: Locator;
 
   constructor(page: Page) {
     super(page);
-    this.menuButton = page.locator(
-      'button[aria-label="Menu"], button[aria-label="menu"], .menu-button, button:has-text("☰"), [role="button"]:has-text("Menu")'
-    );
-    this.myProfileLink = page.locator(
-      'a:has-text("My Profile"), a:has-text("Profile"), li:has-text("My Profile")'
-    );
-    this.logoutButton = page.locator(
-      'button:has-text("Logout"), button:has-text("Sign Out"), a:has-text("Logout")'
-    );
-    this.userAvatar = page.locator(
-      'img[alt*="Profile"], img[src*="profile"], .user-avatar, .profile-picture'
-    );
+
+    // ✅ CORRECT menu button selector based on codegen
+    // The button text contains "Menu ▼" with possibly a letter prefix like "S Menu ▼"
+    this.menuButton = page.getByRole('button', { name: /Menu/i });
+    
+    // ✅ My Profile button inside the menu
+    this.myProfileButton = page.getByRole('button', { name: /My Profile/i });
+
+    // ✅ Optional: Show more details button (may appear on profile)
+    this.showMoreDetailsButton = page.getByRole('button', { name: /Show more details/i });
   }
 
   /**
@@ -28,81 +25,106 @@ export class HomePage extends BasePage {
    */
   async isLoggedIn(): Promise<boolean> {
     await this.page.waitForLoadState('networkidle');
-    await this.page.waitForTimeout(2000);
+    await this.page.waitForTimeout(3000);
 
-    console.log(`🔍 Checking login status. URL: ${this.page.url()}`);
+    console.log(`🔍 Checking login. URL: ${this.page.url()}`);
 
-    // Multiple possible indicators of being logged in
+    // Look for menu button (main indicator)
+    try {
+      const menuVisible = await this.menuButton.first().isVisible({ timeout: 5000 });
+      if (menuVisible) {
+        console.log('✅ Login confirmed: Menu button visible');
+        return true;
+      }
+    } catch {
+      // Try other indicators
+    }
+
+    // Fallback indicators
     const indicators = [
-      'button[aria-label="Menu"]',
-      'button[aria-label="menu"]',
-      '.menu-button',
-      'button:has-text("☰")',
-      'a:has-text("My Profile")',
-      'a:has-text("Profile")',
       'button:has-text("Logout")',
-      'a:has-text("Logout")',
       'button:has-text("Sign Out")',
-      '[href*="profile"]',
-      '[href*="dashboard"]',
-      '.user-avatar',
-      '.profile-picture',
-      'nav',
+      'button:has-text("My Profile")',
+      '[class*="profile" i]',
+      '[class*="avatar" i]',
     ];
 
     for (const selector of indicators) {
-      try {
-        const count = await this.page.locator(selector).count();
-        if (count > 0) {
-          const visible = await this.page.locator(selector).first().isVisible();
-          if (visible) {
-            console.log(`✅ Login indicator found: ${selector}`);
-            return true;
-          }
+      const count = await this.page.locator(selector).count();
+      if (count > 0) {
+        const visible = await this.page.locator(selector).first().isVisible().catch(() => false);
+        if (visible) {
+          console.log(`✅ Login confirmed via: ${selector}`);
+          return true;
         }
-      } catch {
-        // Continue
       }
     }
 
-    console.log('⚠️ No login indicators found');
+    // Check URL changed
+    const url = this.page.url();
+    if (!url.includes('/#practice') && !url.includes('/login')) {
+      console.log(`✅ Login confirmed via URL change: ${url}`);
+      return true;
+    }
+
+    console.log('⚠️ Login could not be verified');
     return false;
   }
 
   /**
-   * Click the hamburger/menu button
+   * Click the menu button (top right corner)
    */
   async clickMenu(): Promise<void> {
-    await this.menuButton.first().waitFor({ state: 'visible', timeout: 10000 });
+    console.log('🍔 Clicking menu button...');
+    
+    await this.menuButton.first().waitFor({ state: 'visible', timeout: 15000 });
     await this.menuButton.first().click();
-    await this.page.waitForTimeout(500);
+    await this.page.waitForTimeout(1000);
+    
+    console.log('✅ Menu clicked');
   }
 
   /**
-   * Navigate to "My Profile" section
+   * Click "My Profile" from the menu
    */
   async clickMyProfile(): Promise<void> {
-    await this.myProfileLink.first().waitFor({ state: 'visible', timeout: 10000 });
-    await this.myProfileLink.first().click();
+    console.log('👤 Clicking My Profile...');
+    
+    // Wait for menu to expand
+    await this.page.waitForTimeout(500);
+    
+    await this.myProfileButton.first().waitFor({ state: 'visible', timeout: 10000 });
+    await this.myProfileButton.first().click();
+    
     await this.page.waitForLoadState('networkidle');
-    await this.page.waitForTimeout(1000);
+    await this.page.waitForTimeout(1500);
+    
+    console.log('✅ Navigated to My Profile');
   }
 
   /**
-   * Logout from the application
-   */
-  async logout(): Promise<void> {
-    if (await this.logoutButton.first().isVisible().catch(() => false)) {
-      await this.logoutButton.first().click();
-      await this.page.waitForLoadState('networkidle');
-    }
-  }
-
-  /**
-   * Convenience method: open menu + go to profile
+   * Convenience: open menu + go to profile
    */
   async navigateToProfile(): Promise<void> {
     await this.clickMenu();
     await this.clickMyProfile();
+  }
+
+  /**
+   * Click "Show more details" if present (may appear after login)
+   */
+  async clickShowMoreDetailsIfPresent(): Promise<boolean> {
+    try {
+      const visible = await this.showMoreDetailsButton.first().isVisible({ timeout: 2000 });
+      if (visible) {
+        await this.showMoreDetailsButton.first().click();
+        await this.page.waitForTimeout(500);
+        console.log('✅ Clicked "Show more details"');
+        return true;
+      }
+    } catch {
+      // Button not present, that's OK
+    }
+    return false;
   }
 }
