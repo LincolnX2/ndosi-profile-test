@@ -1,120 +1,107 @@
 import { Page, Locator } from '@playwright/test';
-import { TestConfig } from '../../config/test-config';
+import { BasePage } from './BasePage';
 
-export class ProfilePage {
-  readonly page: Page;
-  readonly menuButton: Locator;
-  readonly myProfileLink: Locator;
+export class ProfilePage extends BasePage {
   readonly editProfileButton: Locator;
   readonly fileInput: Locator;
   readonly profilePicture: Locator;
   readonly saveButton: Locator;
   readonly successMessage: Locator;
   readonly loadingIndicator: Locator;
+  readonly cancelButton: Locator;
 
   constructor(page: Page) {
-    this.page = page;
-    this.menuButton = page.locator(TestConfig.selectors.profile.menu);
-    this.myProfileLink = page.locator(TestConfig.selectors.profile.myProfile);
-    this.editProfileButton = page.locator(TestConfig.selectors.profile.editProfile);
-    this.fileInput = page.locator(TestConfig.selectors.profile.fileInput);
-    this.profilePicture = page.locator(TestConfig.selectors.profile.profileImage);
-    this.saveButton = page.locator(TestConfig.selectors.profile.saveButton);
-    this.successMessage = page.locator(TestConfig.selectors.profile.successMessage);
-    this.loadingIndicator = page.locator(TestConfig.selectors.profile.loadingIndicator);
+    super(page);
+    this.editProfileButton = page.locator(
+      'button:has-text("Edit Profile"), a:has-text("Edit Profile"), button:has-text("Edit")'
+    );
+    this.fileInput = page.locator('input[type="file"]');
+    this.profilePicture = page.locator(
+      'img[alt*="Profile"], img[src*="profile"], .profile-image, .avatar'
+    );
+    this.saveButton = page.locator(
+      'button:has-text("Save"), button:has-text("Update"), button[type="submit"]'
+    );
+    this.successMessage = page.locator(
+      '.success-message, .alert-success, [role="status"]'
+    );
+    this.loadingIndicator = page.locator(
+      '.loading, .spinner, [role="progressbar"]'
+    );
+    this.cancelButton = page.locator(
+      'button:has-text("Cancel"), a:has-text("Cancel")'
+    );
   }
 
   /**
-   * Click the menu button
-   */
-  async clickMenu(): Promise<void> {
-    await this.menuButton.waitFor({ state: 'visible', timeout: 10000 });
-    await this.menuButton.click();
-    await this.page.waitForTimeout(500);
-  }
-
-  /**
-   * Navigate to My Profile
-   */
-  async clickMyProfile(): Promise<void> {
-    await this.myProfileLink.waitFor({ state: 'visible', timeout: 10000 });
-    await this.myProfileLink.click();
-    await this.page.waitForLoadState('networkidle');
-    await this.page.waitForTimeout(1000);
-  }
-
-  /**
-   * Click Edit Profile button
+   * Click the "Edit Profile" button
    */
   async clickEditProfile(): Promise<void> {
-    await this.editProfileButton.waitFor({ state: 'visible', timeout: 10000 });
-    await this.editProfileButton.click();
+    await this.editProfileButton.first().waitFor({ state: 'visible', timeout: 10000 });
+    await this.editProfileButton.first().click();
     await this.page.waitForTimeout(1000);
   }
 
   /**
-   * Upload a profile picture
+   * Upload a new profile picture
    */
   async uploadProfilePicture(filePath: string): Promise<void> {
-    // Wait for file input
+    // Wait for file input to be available
     await this.fileInput.waitFor({ state: 'visible', timeout: 10000 });
-    
+
     // Set the file
     await this.fileInput.setInputFiles(filePath);
-    
-    // Wait for upload to start
     await this.page.waitForTimeout(1000);
-    
-    // Wait for loading to complete
+
+    // Wait for loading indicator to appear then disappear
     try {
       await this.loadingIndicator.waitFor({ state: 'visible', timeout: 3000 });
       await this.loadingIndicator.waitFor({ state: 'hidden', timeout: 30000 });
     } catch {
       await this.page.waitForTimeout(2000);
     }
-    
-    // Save if needed
-    if (await this.saveButton.isVisible().catch(() => false)) {
-      await this.saveButton.click();
+
+    // Click save if the button is visible
+    if (await this.saveButton.first().isVisible().catch(() => false)) {
+      await this.saveButton.first().click();
       await this.page.waitForLoadState('networkidle');
     }
   }
 
   /**
-   * Get the profile picture src attribute
+   * Get the current profile picture source URL
    */
   async getProfilePictureSrc(): Promise<string | null> {
-    await this.profilePicture.waitFor({ state: 'visible', timeout: 5000 });
-    return await this.profilePicture.getAttribute('src');
+    await this.profilePicture.first().waitFor({ state: 'visible', timeout: 5000 });
+    return await this.profilePicture.first().getAttribute('src');
   }
 
   /**
-   * Wait for profile picture update to complete
+   * Wait for profile update success message or image change
    */
   async waitForProfileUpdate(): Promise<void> {
     try {
-      await this.successMessage.waitFor({ state: 'visible', timeout: 10000 });
+      await this.successMessage.first().waitFor({ state: 'visible', timeout: 10000 });
+      console.log('✅ Success message displayed');
     } catch {
+      console.log('ℹ️ No success message; waiting for image update');
       await this.page.waitForTimeout(3000);
     }
   }
 
   /**
-   * Check if profile is visible
+   * Check if profile picture is visible
    */
-  async isProfileVisible(): Promise<boolean> {
-    try {
-      await this.profilePicture.waitFor({ state: 'visible', timeout: 3000 });
-      return true;
-    } catch {
-      return false;
-    }
+  async isProfilePictureVisible(): Promise<boolean> {
+    return await this.profilePicture.first().isVisible({ timeout: 3000 }).catch(() => false);
   }
 
   /**
-   * Wait for menu button
+   * Cancel editing
    */
-  async waitForMenu(): Promise<void> {
-    await this.menuButton.waitFor({ state: 'visible', timeout: 10000 });
+  async cancelEdit(): Promise<void> {
+    if (await this.cancelButton.first().isVisible().catch(() => false)) {
+      await this.cancelButton.first().click();
+    }
   }
 }

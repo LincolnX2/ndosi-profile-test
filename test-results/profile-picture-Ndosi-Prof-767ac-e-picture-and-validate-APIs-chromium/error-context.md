@@ -73,7 +73,7 @@ Received: false
           - generic [ref=e59]: 📅
           - generic [ref=e60]:
             - generic [ref=e61]: Today
-            - generic [ref=e62]: Wednesday, 30 September 2026
+            - generic [ref=e62]: Friday, 2 October 2026
       - generic [ref=e63]:
         - generic [ref=e64]:
           - generic [ref=e65]: 📚
@@ -83,7 +83,7 @@ Received: false
         - generic [ref=e69]:
           - generic [ref=e70]: ✅
           - generic [ref=e71]:
-            - generic [ref=e72]: "7"
+            - generic [ref=e72]: "6"
             - generic [ref=e73]: Completed
         - generic [ref=e74]:
           - generic [ref=e75]: 📋
@@ -93,26 +93,25 @@ Received: false
         - generic [ref=e79]:
           - generic [ref=e80]: 🏆
           - generic [ref=e81]:
-            - generic [ref=e82]: 100%
+            - generic [ref=e82]: 89%
             - generic [ref=e83]: Avg. Progress
       - generic [ref=e84]:
         - generic [ref=e85]:
           - generic [ref=e86]:
             - heading "Get to know Today's Instructor" [level=3] [ref=e87]
-            - paragraph [ref=e88]: Wednesday, September 30, 2026
+            - paragraph [ref=e88]: Friday, October 2, 2026
           - generic [ref=e89]: 1 session today
         - generic [ref=e92]:
-          - generic [ref=e93]:
-            - generic [ref=e94]: AM
-            - generic [ref=e95]:
-              - generic [ref=e96]: Allettah Mpopetsi
-              - generic [ref=e97]: Foundation and Basics - Selenium Java • 18:00 - 20:00
-          - paragraph [ref=e98]: Allettah is passionate about equipping the next generation of testers with both the foundational knowledge and the practical skills needed to thrive in agile, fast-moving software teams. Drawing from lived experience across manual testing, test automation, API validation, and database testing, Allettah delivers training that is grounded, relevant, and immediately applicable on the job.
+          - generic [ref=e95]:
+            - generic [ref=e96]: lubabalo Mkhize
+            - generic [ref=e97]: Foundation and Basics - Selenium Java • 18:00 - 20:00
+          - paragraph [ref=e98]: Software Test Automation Instructor passionate about helping others learn testing through practical, hands-on experience. Lets build, test and grow together.
           - generic [ref=e99]:
-            - generic [ref=e100]: 7 yrs experience
-            - generic [ref=e101]: "0659924121"
+            - generic [ref=e100]: "0820648922"
+            - link "LinkedIn" [ref=e101] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/lubabalo-thamsanqa-mkhize-72214a9b/
           - link "Join Now" [ref=e102] [cursor=pointer]:
-            - /url: https://teams.microsoft.com/meet/3157050412400915?p=jiVCcfrR1OL3OrzIc4
+            - /url: https://teams.microsoft.com/meet/3334001235054611?p=keBylUBNFnqyatSxI2
       - generic [ref=e103]:
         - generic [ref=e104]:
           - generic [ref=e105]:
@@ -124,27 +123,27 @@ Received: false
             - button "View All →" [ref=e111] [cursor=pointer]
           - generic [ref=e112]:
             - generic [ref=e113]:
-              - generic [ref=e114]: PA
+              - generic [ref=e114]: AA
               - generic [ref=e115]:
-                - generic [ref=e116]: Pipeline And Perfomance
-                - generic [ref=e117]: ✓ Completed
-              - generic [ref=e118]: 100%
+                - generic [ref=e116]: Advanced Automation- Perfomance and Playwright
+                - generic [ref=e117]: ⏳ In Progress
+              - generic [ref=e118]: 25%
             - generic [ref=e120]:
-              - generic [ref=e121]: PI
+              - generic [ref=e121]: FA
               - generic [ref=e122]:
-                - generic [ref=e123]: Python Integration - Selenium with Python
+                - generic [ref=e123]: Foundation and Basics - Selenium Java
                 - generic [ref=e124]: ✓ Completed
               - generic [ref=e125]: 100%
             - generic [ref=e127]:
-              - generic [ref=e128]: MA
+              - generic [ref=e128]: PI
               - generic [ref=e129]:
-                - generic [ref=e130]: Mobile Automation(Android ,IOS and Huawei)
+                - generic [ref=e130]: Python Integration - Selenium with Python
                 - generic [ref=e131]: ✓ Completed
               - generic [ref=e132]: 100%
             - generic [ref=e134]:
-              - generic [ref=e135]: AA
+              - generic [ref=e135]: MA
               - generic [ref=e136]:
-                - generic [ref=e137]: Advanced Automation- Perfomance and Playwright
+                - generic [ref=e137]: Mobile Automation(Android ,IOS and Huawei)
                 - generic [ref=e138]: ✓ Completed
               - generic [ref=e139]: 100%
             - generic [ref=e141]:
@@ -192,11 +191,11 @@ Received: false
             - generic [ref=e190]:
               - generic [ref=e191]:
                 - generic [ref=e192]:
-                  - generic "Due soon" [ref=e193]: ⚠️
+                  - generic "Overdue" [ref=e193]: 🚨
                   - generic [ref=e194]: Upload a profile picture
                 - paragraph [ref=e195]: "Important note: - Please choose any framework and language of your choice to achieve this task - Please provide a detailed readme file - create a repo and make sure you push more than once - Your solution must execute on pipeline (GitHub actions) - Trigger your tests to run daily midnight SAST - Your solution must have a clear report - your solution must have screenshots UI Instructions 1. login to ndosi automation test site 2. Click menu 3. click my profile 4. click edit profile 5. upload a new profile picture 6. Ensure the profile picture is updated API Instructions 1. find all endpoints you interacted with on the UI instructions 2. Validate the response codes for each endpoint"
                 - button "Show more details" [ref=e196] [cursor=pointer]
-                - generic [ref=e197]: "⏰ Due soon: 9/30/2026"
+                - generic [ref=e197]: "⏰ Overdue: 9/30/2026"
                 - generic [ref=e198]: 📦 Repo required
               - button "✓ Complete" [ref=e200] [cursor=pointer]
 ```

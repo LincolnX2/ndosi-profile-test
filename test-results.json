@@ -1,6 +1,11 @@
 {
   "config": {
-    "argv": [],
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\USER\\Documents\\ndosi-profile-test\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "/tests/profile-picture.spec.ts"
+    ],
     "configFile": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\playwright.config.ts",
     "rootDir": "C:/Users/USER/Documents/ndosi-profile-test/tests",
     "failOnFlakyTests": false,
@@ -61,7 +66,7 @@
     "shard": null,
     "tags": [],
     "updateSnapshots": "missing",
-    "updateSourceMethod": "3way",
+    "updateSourceMethod": "patch",
     "version": "1.62.1",
     "workers": 2,
     "webServer": null
@@ -96,7 +101,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 15105,
+                      "duration": 24542,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\USER\\Documents\\ndosi-profile-test\\tests\\profile-picture.spec.ts:80:24",
@@ -149,10 +154,10 @@
                           "text": "🌐 Browser Console: API Response data: {success: true, message: Login successful, data: Object}\n"
                         },
                         {
-                          "text": "🌐 Browser Console: Full login response: {\n  \"success\": true,\n  \"message\": \"Login successful\",\n  \"data\": {\n    \"user\": {\n      \"id\": \"68e30288-18b8-4b84-9040-03b5fc21fc3a\",\n      \"firstName\": \"Sabur\",\n      \"lastName\": \"Yinus\",\n      \"email\": \"sabur.yinus@gmail.com\",\n      \"role\": \"user\",\n      \"groupId\": \"fb1b509e-78db-477c-a64e-f7265d593904\",\n      \"groupName\": \"6th Group 2026\",\n      \"approvalStatus\": \"approved\",\n      \"createdAt\": \"2026-02-01 18:22:58\",\n      \"updatedAt\": \"2026-09-22 19:26:07\"\n    },\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI2OGUzMDI4OC0xOGI4LTRiODQtOTA0MC0wM2I1ZmMyMWZjM2EiLCJlbWFpbCI6InNhYnVyLnlpbnVzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwic2Vzc2lvbklkIjoiMjg3ODVlZjEtN2E4Yi00NmY4LWI5NGQtZDM3YzUwMmZhMmU3IiwiaWF0IjoxNzkwNzk2MDI4LCJleHAiOjE3OTA4ODI0Mjh9.QFB8l5xKuHuHc34yweZSDxo1x3hZ0XjtycP9KYh7YqM\",\n    \"sessionId\": \"28785ef1-7a8b-46f8-b94d-d37c502fa2e7\"\n  }\n}\n"
+                          "text": "🌐 Browser Console: Full login response: {\n  \"success\": true,\n  \"message\": \"Login successful\",\n  \"data\": {\n    \"user\": {\n      \"id\": \"68e30288-18b8-4b84-9040-03b5fc21fc3a\",\n      \"firstName\": \"Sabur\",\n      \"lastName\": \"Yinus\",\n      \"email\": \"sabur.yinus@gmail.com\",\n      \"role\": \"user\",\n      \"groupId\": \"fb1b509e-78db-477c-a64e-f7265d593904\",\n      \"groupName\": \"6th Group 2026\",\n      \"approvalStatus\": \"approved\",\n      \"createdAt\": \"2026-02-01 18:22:58\",\n      \"updatedAt\": \"2026-10-02 03:12:55\"\n    },\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI2OGUzMDI4OC0xOGI4LTRiODQtOTA0MC0wM2I1ZmMyMWZjM2EiLCJlbWFpbCI6InNhYnVyLnlpbnVzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwic2Vzc2lvbklkIjoiMGU4NjAyYTgtYjhhOC00MmU5LTg4YWItZDE2NzUxZDliODNjIiwiaWF0IjoxNzkwOTYwMDM5LCJleHAiOjE3OTEwNDY0Mzl9.QTf1oLJ95VOc9aELg777vhaO63mt0F2zwKEhXQKQMaQ\",\n    \"sessionId\": \"0e8602a8-b8a8-42e9-88ab-d16751d9b83c\"\n  }\n}\n"
                         },
                         {
-                          "text": "🌐 Browser Console: Extracted token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI2OGUzMDI4OC0xOGI4LTRiODQtOTA0MC0wM2I1ZmMyMWZjM2EiLCJlbWFpbCI6InNhYnVyLnlpbnVzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwic2Vzc2lvbklkIjoiMjg3ODVlZjEtN2E4Yi00NmY4LWI5NGQtZDM3YzUwMmZhMmU3IiwiaWF0IjoxNzkwNzk2MDI4LCJleHAiOjE3OTA4ODI0Mjh9.QFB8l5xKuHuHc34yweZSDxo1x3hZ0XjtycP9KYh7YqM\n"
+                          "text": "🌐 Browser Console: Extracted token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI2OGUzMDI4OC0xOGI4LTRiODQtOTA0MC0wM2I1ZmMyMWZjM2EiLCJlbWFpbCI6InNhYnVyLnlpbnVzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwic2Vzc2lvbklkIjoiMGU4NjAyYTgtYjhhOC00MmU5LTg4YWItZDE2NzUxZDliODNjIiwiaWF0IjoxNzkwOTYwMDM5LCJleHAiOjE3OTEwNDY0Mzl9.QTf1oLJ95VOc9aELg777vhaO63mt0F2zwKEhXQKQMaQ\n"
                         },
                         {
                           "text": "🌐 Browser Console: Token saved successfully\n"
@@ -215,13 +220,10 @@
                           "text": "🌐 Browser Console: API Response: 200 \n"
                         },
                         {
-                          "text": "🌐 Browser Console: API Response data: {success: true, message: Profile retrieved successfully, data: Object}\n"
+                          "text": "🌐 Browser Console: API Response data: {success: true, message: Tasks retrieved successfully, data: Object}\n"
                         },
                         {
                           "text": "🌐 Browser Console: API Response: 200 \n"
-                        },
-                        {
-                          "text": "🌐 Browser Console: API Response data: {success: true, message: Enrollments retrieved successfully, data: Object}\n"
                         },
                         {
                           "text": "🌐 Browser Console: Failed to load resource: the server responded with a status of 404 ()\n"
@@ -230,25 +232,28 @@
                           "text": "🌐 Browser Console: API Response: 404 \n"
                         },
                         {
-                          "text": "🌐 Browser Console: API Response: 200 \n"
+                          "text": "🌐 Browser Console: API Response data: {success: true, message: Profile retrieved successfully, data: Object}\n"
                         },
                         {
                           "text": "🌐 Browser Console: API Response data: {success: false, message: Endpoint not found, error_code: ENDPOINT_NOT_FOUND, requested_path: /student/today, requested_method: GET}\n"
                         },
                         {
+                          "text": "🌐 Browser Console: API Response: 200 \n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response data: {success: true, message: Enrollments retrieved successfully, data: Object}\n"
+                        },
+                        {
+                          "text": "🌐 Browser Console: API Response: 200 \n"
+                        },
+                        {
                           "text": "🌐 Browser Console: API Response data: {success: true, message: Today's instructors retrieved successfully, data: Object}\n"
                         },
                         {
-                          "text": "🌐 Browser Console: API Response: 200 \n"
-                        },
-                        {
-                          "text": "🌐 Browser Console: API Response data: {success: true, message: Tasks retrieved successfully, data: Object}\n"
+                          "text": "📡 API: GET https://www.ndosiautomation.co.za/API/uploads/profile-images/0d196d68-e678-4ae9-a537-791c7079bca1_1783008812_355aa253.png - Status: 200\n"
                         },
                         {
                           "text": "🌐 Browser Console: API Response: 200 \n"
-                        },
-                        {
-                          "text": "🌐 Browser Console: API Response data: {success: true, message: Profile retrieved successfully, data: Object}\n"
                         },
                         {
                           "text": "🌐 Browser Console: API Response: 200 \n"
@@ -257,12 +262,15 @@
                           "text": "🌐 Browser Console: API Response data: {success: true, message: Profile retrieved successfully, data: Object}\n"
                         },
                         {
-                          "text": "📸 Failure screenshot saved: test-results/failure-1790796034640.png\n"
+                          "text": "🌐 Browser Console: API Response data: {success: true, message: Profile retrieved successfully, data: Object}\n"
+                        },
+                        {
+                          "text": "📸 Failure screenshot saved: test-results/failure-1790960042930.png\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-30T19:20:17.144Z",
+                      "startTime": "2026-10-02T16:53:37.824Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -279,11 +287,6 @@
                           "name": "error-context",
                           "contentType": "text/markdown",
                           "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\profile-picture-Ndosi-Prof-767ac-e-picture-and-validate-APIs-chromium\\error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\USER\\Documents\\ndosi-profile-test\\test-results\\profile-picture-Ndosi-Prof-767ac-e-picture-and-validate-APIs-chromium\\trace.zip"
                         }
                       ],
                       "errorLocation": {
@@ -308,8 +311,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-09-30T19:20:14.705Z",
-    "duration": 21285.812000000005,
+    "startTime": "2026-10-02T16:53:35.804Z",
+    "duration": 29620.997,
     "expected": 0,
     "skipped": 0,
     "unexpected": 1,
