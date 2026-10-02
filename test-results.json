@@ -101,7 +101,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4115,
+                      "duration": 4037,
                       "errors": [],
                       "stdout": [
                         {
@@ -113,7 +113,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T20:22:59.400Z",
+                      "startTime": "2026-10-02T21:11:31.103Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -142,7 +142,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4261,
+                      "duration": 4541,
                       "errors": [],
                       "stdout": [
                         {
@@ -154,7 +154,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T20:23:03.684Z",
+                      "startTime": "2026-10-02T21:11:35.318Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -183,7 +183,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10659,
+                      "duration": 10316,
                       "errors": [],
                       "stdout": [
                         {
@@ -213,7 +213,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T20:23:07.983Z",
+                      "startTime": "2026-10-02T21:11:39.894Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -242,7 +242,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 13568,
+                      "duration": 13395,
                       "errors": [],
                       "stdout": [
                         {
@@ -278,7 +278,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T20:23:18.665Z",
+                      "startTime": "2026-10-02T21:11:50.251Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -324,7 +324,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 13818,
+                      "duration": 13179,
                       "errors": [],
                       "stdout": [
                         {
@@ -360,7 +360,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T20:23:32.261Z",
+                      "startTime": "2026-10-02T21:12:03.688Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -389,7 +389,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12752,
+                      "duration": 13215,
                       "errors": [],
                       "stdout": [
                         {
@@ -425,7 +425,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T20:23:46.100Z",
+                      "startTime": "2026-10-02T21:12:16.897Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -454,7 +454,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 16916,
+                      "duration": 17006,
                       "errors": [],
                       "stdout": [
                         {
@@ -496,7 +496,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T20:23:58.899Z",
+                      "startTime": "2026-10-02T21:12:30.143Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -525,7 +525,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 22778,
+                      "duration": 21591,
                       "errors": [],
                       "stdout": [
                         {
@@ -576,7 +576,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T20:24:15.849Z",
+                      "startTime": "2026-10-02T21:12:47.183Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -622,7 +622,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 44866,
+                      "duration": 43450,
                       "errors": [],
                       "stdout": [
                         {
@@ -671,10 +671,10 @@
                           "text": "🔍 Looking for profile picture...\n"
                         },
                         {
-                          "text": "✅ Found via \".nav-profile-avatar\": https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790972374_97ca89c3.png\n"
+                          "text": "✅ Found via \".nav-profile-avatar\": https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975211_e1b332f9.png\n"
                         },
                         {
-                          "text": "📸 Initial: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790972374_97ca89c3.png\n"
+                          "text": "📸 Initial: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975211_e1b332f9.png\n"
                         },
                         {
                           "text": "📍 Step 2: Opening Edit Profile\n"
@@ -731,19 +731,19 @@
                           "text": "🔍 Looking for profile picture...\n"
                         },
                         {
-                          "text": "✅ Found via \".nav-profile-avatar\": https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790972702_7fc930cc.png\n"
+                          "text": "✅ Found via \".nav-profile-avatar\": https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png\n"
                         },
                         {
-                          "text": "📸 Updated: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790972702_7fc930cc.png\n"
+                          "text": "📸 Updated: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png\n"
                         },
                         {
                           "text": "\n📋 Dialogs: [\"Profile updated successfully!\"]\n"
                         },
                         {
-                          "text": "📸 Initial URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790972374_97ca89c3.png\n"
+                          "text": "📸 Initial URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975211_e1b332f9.png\n"
                         },
                         {
-                          "text": "📸 Updated URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790972702_7fc930cc.png\n"
+                          "text": "📸 Updated URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png\n"
                         },
                         {
                           "text": "✅ Profile picture URL changed!\n"
@@ -754,7 +754,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T20:24:38.668Z",
+                      "startTime": "2026-10-02T21:13:08.807Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -800,7 +800,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7664,
+                      "duration": 6649,
                       "errors": [],
                       "stdout": [
                         {
@@ -822,30 +822,24 @@
                           "text": "📡 API: GET https://www.ndosiautomation.co.za/API/uploads/profile-images/0d196d68-e678-4ae9-a537-791c7079bca1_1783008812_355aa253.png - Status: 200\n"
                         },
                         {
-                          "text": "📡 API: GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790972702_7fc930cc.png - Status: 200\n"
-                        },
-                        {
                           "text": "✅ Login form submitted\n"
                         },
                         {
-                          "text": "📡 Total calls: 3\n"
+                          "text": "📡 Total calls: 2\n"
                         },
                         {
-                          "text": "📋 Unique endpoints: 3\n"
+                          "text": "📋 Unique endpoints: 2\n"
                         },
                         {
                           "text": "  1. ✅ GET https://ndosiautomation.co.za/static/media/Nta%20Logo%20fnl.d253f67aeddc87f99822.png - 200\n"
                         },
                         {
                           "text": "  2. ✅ GET https://www.ndosiautomation.co.za/API/uploads/profile-images/0d196d68-e678-4ae9-a537-791c7079bca1_1783008812_355aa253.png - 200\n"
-                        },
-                        {
-                          "text": "  3. ✅ GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790972702_7fc930cc.png - 200\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T20:25:23.595Z",
+                      "startTime": "2026-10-02T21:13:52.308Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -874,7 +868,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 15555,
+                      "duration": 14974,
                       "errors": [],
                       "stdout": [
                         {
@@ -893,9 +887,6 @@
                           "text": "🔑 Clicking login button...\n"
                         },
                         {
-                          "text": "📡 API: GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790972702_7fc930cc.png - Status: 200\n"
-                        },
-                        {
                           "text": "📡 API: GET https://www.ndosiautomation.co.za/API/uploads/profile-images/0d196d68-e678-4ae9-a537-791c7079bca1_1783008812_355aa253.png - Status: 200\n"
                         },
                         {
@@ -903,6 +894,9 @@
                         },
                         {
                           "text": "🍔 Clicking menu button...\n"
+                        },
+                        {
+                          "text": "📡 API: GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png - Status: 200\n"
                         },
                         {
                           "text": "✅ Menu clicked\n"
@@ -940,7 +934,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T20:25:31.292Z",
+                      "startTime": "2026-10-02T21:13:58.992Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -969,7 +963,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 13214,
+                      "duration": 9770,
                       "errors": [],
                       "stdout": [
                         {
@@ -997,6 +991,9 @@
                           "text": "🍔 Clicking menu button...\n"
                         },
                         {
+                          "text": "📡 API: GET https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png - Status: 200\n"
+                        },
+                        {
                           "text": "✅ Menu clicked\n"
                         },
                         {
@@ -1013,11 +1010,14 @@
                         },
                         {
                           "text": "  2. /API/uploads/profile-images/0d196d68-e678-4ae9-a537-791c7079bca1_1783008812_355aa253.png - Statuses: 200\n"
+                        },
+                        {
+                          "text": "  3. /API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png - Statuses: 200\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T20:25:46.866Z",
+                      "startTime": "2026-10-02T21:14:13.992Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1063,7 +1063,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 51581,
+                      "duration": 46388,
                       "errors": [],
                       "stdout": [
                         {
@@ -1115,10 +1115,10 @@
                           "text": "🔍 Looking for profile picture...\n"
                         },
                         {
-                          "text": "✅ Found via \".nav-profile-avatar\": https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790972702_7fc930cc.png\n"
+                          "text": "✅ Found via \".nav-profile-avatar\": https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png\n"
                         },
                         {
-                          "text": "📸 Initial: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790972702_7fc930cc.png\n"
+                          "text": "📸 Initial: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png\n"
                         },
                         {
                           "text": "✏️ Step 4: Edit Profile\n"
@@ -1175,19 +1175,19 @@
                           "text": "🔍 Looking for profile picture...\n"
                         },
                         {
-                          "text": "✅ Found via \".nav-profile-avatar\": https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790972790_eb034d8e.png\n"
+                          "text": "✅ Found via \".nav-profile-avatar\": https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975688_54e389e9.png\n"
                         },
                         {
-                          "text": "📸 Updated: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790972790_eb034d8e.png\n"
+                          "text": "📸 Updated: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975688_54e389e9.png\n"
                         },
                         {
                           "text": "\n📋 Dialogs: [\"Profile updated successfully!\"]\n"
                         },
                         {
-                          "text": "📸 Initial URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790972702_7fc930cc.png\n"
+                          "text": "📸 Initial URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975612_5bd71624.png\n"
                         },
                         {
-                          "text": "📸 Updated URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790972790_eb034d8e.png\n"
+                          "text": "📸 Updated URL: https://www.ndosiautomation.co.za/API/uploads/profile-images/68e30288-18b8-4b84-9040-03b5fc21fc3a_1790975688_54e389e9.png\n"
                         },
                         {
                           "text": "✅ Profile picture URL changed!\n"
@@ -1196,12 +1196,12 @@
                           "text": "\n✅ ═══════ E2E TEST COMPLETE ═══════\n"
                         },
                         {
-                          "text": "⏱️ Total duration: 51012ms\n\n"
+                          "text": "⏱️ Total duration: 45526ms\n\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-02T20:26:00.104Z",
+                      "startTime": "2026-10-02T21:14:23.792Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1221,8 +1221,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-02T20:22:58.559Z",
-    "duration": 233276.082,
+    "startTime": "2026-10-02T21:11:30.291Z",
+    "duration": 220069.16999999998,
     "expected": 13,
     "skipped": 0,
     "unexpected": 0,
